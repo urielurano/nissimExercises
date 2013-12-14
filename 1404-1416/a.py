@@ -1,5 +1,6 @@
 '''
-In this file I put the constans to use for b
+In this file I put the gloval varables
+a.k.a config file
 '''
 
 import math
@@ -13,15 +14,16 @@ mn = 1.6726e-23 #mass of a neutron
 '''
 Data given by the article
 '''
-#I need find L, N, a [Stefan constant]
+#I need find sigmaT, L, N, a [Stefan constant]
 
+sigmaT = .09 #Delete, this is not a real value of this
 thetaC = math.sqrt(2/3)
 deltaTi = 2
 z = 4.35
 Ec = math.pow(10,52)
 gammaC = 50
 iso = 8.8e54 #The isotropic gamma ray energy of this burst
-thetaJ =  0.01
+thetaJ = 0.01
 p = 3.2
 xuc = 0.5
 
