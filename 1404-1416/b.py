@@ -2,22 +2,165 @@
 ##########################Class of some equations of the article:#############################
 ############An Up-scattered Cocoon Emission Model of Gamma-Ray Burst High-Energy Lags#########
 ##############################################################################################
-##############################################################################################
-######Note: We denote r instead of r*#########################################################
-##############################################################################################
 
-import math
-
-#Module of rs
-#Here gammaC is the Terminal Lorentz Factor
-def rs(r, gammaC):
-    return r*gammaC
+import c
+from c import *
 
 
-#Module of rph
-#Here sigmaT is the Thomson Cross Section
-def rph(Ec, sigmaT, thetaC, gammaC, mp, c):
-    return math.sqrt((Ec*sigmaT)/(math.pi*2)*(1-math.cos(thetaC))*gammaC*mp*math.pow(c,2))
+
+
+###########################################################################################
+####################### Dynamics of Cocoon   ##############################################
+###########################################################################################
+
+
+
+
+def rs(r_star, gammac): #Here gammaC is the Terminal Lorentz Factor
+    return r_star*gammac*1/cm
+
+def rph(Ec, thetac, gammac):#Module of rph
+    return sqrt(Ec*sigmaT/(2*pi*(1-cos(thetac))*gammac*mp))*1/cm
+
+def delta_tc(gammac, z):#Module of delta_tc
+    rp=sqrt(Ec*sigmaT/(2*pi*(1-cos(thetac))*gammac*mp))
+    return rp/(2*pow(gammac,2))*(1+z)*1/sec
+
+def rd(r_star, gammac,alphar):#modulo of internal shocks radius
+    return 2*alphar*r_star*pow(gammac,2)*1/cm
+
+def Tin(Ec, thetac, r_star):
+    return pow(Ec/(2*pi*(1-cos(thetac))*pow(r_star,3.0)*asigmaB),1.0/4.0)*1/Kelvin
+
+def Tad(Ec, r_star, gammac,alphar, thetac):
+    Tin=pow(Ec/(2*pi*(1-cos(thetac))*pow(r_star,3.0)*asigmaB),1.0/4.0)
+    rs=r_star*gammac
+    rd=2*alphar*r_star*pow(gammac,2)
+    return Tin*pow(rs/r_star,-1.0)*pow(rd/rs,-2.0/3.0)*1/Kelvin
+
+def Td(Ec, r_star, gammac,alphar, thetac):
+    Tin=pow(Ec/(2*pi*(1-cos(thetac))*pow(r_star,3.0)*asigmaB),1.0/4.0)
+    rs=r_star*gammac
+    rd=2*alphar*r_star*pow(gammac,2)
+    Tad=Tin*pow(rs/r_star,-1.0)*pow(rd/rs,-2.0/3.0)
+    return Tad*pow(rd/rs,1.0/6.0)*pow(xiD,1.0/4.0)*1/Kelvin
+
+
+def Tph(Ec, r_star, gammac,alphar, thetac):
+    Tin=pow(Ec/(2*pi*(1-cos(thetac))*pow(r_star,3.0)*asigmaB),1.0/4.0)
+    rs=r_star*gammac
+    rd=2*alphar*r_star*pow(gammac,2)
+    Tad=Tin*pow(rs/r_star,-1.0)*pow(rd/rs,-2.0/3.0)
+    rph=sqrt(Ec*sigmaT/(2*pi*(1-cos(thetac))*gammac*mp))
+    return Tad*pow(rph/rd,-2.0/3.0)*1/Kelvin
+    
+
+def En(Ec, r_star, gammac,alphar, thetac):
+    Tin=pow(Ec/(2*pi*(1-cos(thetac))*pow(r_star,3.0)*asigmaB),1.0/4.0)
+    rs=r_star*gammac
+    rd=2*alphar*r_star*pow(gammac,2)
+    Tad=Tin*pow(rs/r_star,-1.0)*pow(rd/rs,-2.0/3.0)
+    rph=sqrt(Ec*sigmaT/(2*pi*(1-cos(thetac))*gammac*mp))
+    Tph=Tad*pow(rph/rd,-2.0/3.0)
+    return 2.82*2*gammac*1/(1+z)*Tph*1/KeV
+
+########   Verificar   #######
+
+def fcon(Ec, r_star, gammac,alphar, thetac):
+    Tin=pow(Ec/(2*pi*(1-cos(thetac))*pow(r_star,3.0)*asigmaB),1.0/4.0)
+    rs=r_star*gammac
+    rd=2*alphar*r_star*pow(gammac,2)
+    Tad=Tin*pow(rs/r_star,-1.0)*pow(rd/rs,-2.0/3.0)
+    rph=sqrt(Ec*sigmaT/(2*pi*(1-cos(thetac))*gammac*mp))
+    Tph=Tad*pow(rph/rd,-2.0/3.0)
+    Enu=2.82*2*gammac*1/(1+z)*Tph
+    return pow(1+z,3)/pow(dz, 2)*2*pi*pow(Enu/(2*pi),2)*Tph*gammac*pow(rph/gammac,2.0)*pow(cm,2.0)*sec
+
+
+
+
+
+
+
+###########################################################################################
+####################### Dynamics of jet   ##############################################
+###########################################################################################
+
+
+
+
+
+def ris(gammaj,dt,z):#modulo of internal shocks radius
+    return 2*pow(gammaj,2)*dt/(1+z)*1/cm
+
+
+
+def denp(Lj, z,gammaj, dt):
+    return Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))*pow(cm,3)
+
+def opt(Lj, z,gammaj, dt):
+    nden= Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))
+    rj=2*pow(gammaj,2)*dt/(1+z)
+    return sigmaT*nden*rj/gammaj
+
+
+def B(xiB,Lj, gammaj,dt):
+    denp=Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))   
+    return sqrt(8*pi*xiB*denp*mp)*1/Gauss
+
+
+def gamma_mi(xiB,Lj, gammaj,dt):
+    return (p-2.0)/(p-1.0)*mp/me*xie
+
+
+def gamma_c(xiB,Lj, gammaj,dt,xuc):
+    denp=Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))   
+    B=sqrt(8*pi*xiB*denp*mp)
+    cons=6*pi*me/sigmaT
+    rsi=2*pow(gammaj,2)*dt/(1+z)
+    nden= Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))
+    rj=2*pow(gammaj,2)*dt/(1+z)
+    tau=sigmaT*nden*rj/gammaj
+    gamc=1.0*pow(10,2.8)
+    x1=4.0/3.0*tau*pow(gamc,2.0)*p/(p-2.0)
+    return cons*pow(B,-2.0)*pow(rsi,-1.0)*gammaj*pow(1+x1+x1*xuc,-1.0)
+    
+
+
+def E_m(xiB,Lj, gammaj,dt):
+    denp=Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))   
+    B=sqrt(8*pi*xiB*denp*mp)
+    gamma_mi=(p-2.0)/(p-1.0)*mp/me*xie
+    return 3*e*B*1/me*pow(gamma_mi,2.0)*2*gammaj/(1+z)
+
+
+def Fco(xiB,Lj, gammaj,dt,dz):
+    denp=Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))   
+    B=sqrt(8*pi*xiB*denp*mp)
+    N=Lj*dt/(1+z)*1/(gammaj*mp)
+    return sqrt(3)*pow(e,3.0)*B/me*N*2*gammaj*(1+z)/(4*pi*pow(dz,2.0))*pow(cm,2.0)*sec 
+   
+def E_mssc(xiB,Lj, gammaj,dt):
+    denp=Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))   
+    B=sqrt(8*pi*xiB*denp*mp)
+    gamma_mi=(p-2.0)/(p-1.0)*mp/me*xie
+    E_m=3*e*B*1/me*pow(gamma_mi,2.0)*2*gammaj/(1+z)
+    return 4*pow(gamma_mi,2.0)*E_m
+
+
+def Fcossc(xiB,Lj, gammaj,dt,dz):
+    denp=Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))   
+    B=sqrt(8*pi*xiB*denp*mp)
+    N=Lj*dt/(1+z)*1/(gammaj*mp)
+    Fco=sqrt(3)*pow(e,3.0)*B/me*N*2*gammaj*(1+z)/(4*pi*pow(dz,2.0))
+    nden= Lj*pow(1+z,2.0)/(32*pi*mp*pow(gammaj,6.0)*pow(dt,2.0))
+    rj=2*pow(gammaj,2)*dt/(1+z)
+    tau= sigmaT*nden*rj/gammaj
+    return tau*Fco*pow(cm,2.0)*sec 
+
+
+
+
 
 
 #Module of deltaTi
@@ -26,19 +169,14 @@ def deltaTi(ri, c, gammaJ, z):
     return (ri/(2*c*math.pow(gammaJ,2)))*(1+z)
 
 
-#Module of deltaTc
-def deltaTc(rph, c, gammaC, z):
-    return (rph/(2*c*math.pow(gammaC,2)))*(1+z)
 
 
 #Module of rd
 #Were alfa <= 1
-def rd(alfar, gammaC):
-    return (2*alfar)*math.pow(gammaC,2)
+
 
 #Module of TprimeInit
-def tPrimeInit(Ec, thetaC, r, a):
-    return math.pow((Ec/2*math.pi*(1-math.cos(thetaC))*math.pow(r,3))*a,(1/4))
+
 
 #Module TprimeD
 def tPrimeD(Ec, xid, gammaC, thetaC, rd, r, a):
