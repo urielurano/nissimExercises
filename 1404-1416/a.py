@@ -1,3 +1,10 @@
+'''
+This is a file of constants that we need to use along the
+implementation of the equations of the paper.
+Note. a.py is a.k.a config.py
+'''
+
+
 # Energy scales
 eV=1
 KeV=pow(10,3) * eV
@@ -68,7 +75,6 @@ day=24 * hour
 year=31556925.2 * sec
 
 #flux unity
-
 Jy=pow(10,-23)*erg/pow(cm,2)*1/sec*1/Hz
 mJy=pow(10,-3)*Jy
 micJy=pow(10,-6)*Jy

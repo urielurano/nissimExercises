@@ -1,4 +1,9 @@
-import b
+'''
+Here we implement all the modules of b.py with the data
+of a.py and b.py
+'''
+
+
 from b import *
 
 rsc=rs(r_star, gammac)

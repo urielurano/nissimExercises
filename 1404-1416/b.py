@@ -3,10 +3,8 @@
 ############An Up-scattered Cocoon Emission Model of Gamma-Ray Burst High-Energy Lags#########
 ##############################################################################################
 
-import c
+
 from c import *
-
-
 
 
 ###########################################################################################
@@ -16,7 +14,7 @@ from c import *
 
 
 
-def rs(r_star, gammac): #Here gammaC is the Terminal Lorentz Factor
+def rs(r_star, gammac): #Module of the radius of the star
     return r_star*gammac*1/cm
 
 def rph(Ec, thetac, gammac):#Module of rph
@@ -26,7 +24,7 @@ def delta_tc(gammac, z):#Module of delta_tc
     rp=sqrt(Ec*sigmaT/(2*pi*(1-cos(thetac))*gammac*mp))
     return rp/(2*pow(gammac,2))*(1+z)*1/sec
 
-def rd(r_star, gammac,alphar):#modulo of internal shocks radius
+def rd(r_star, gammac,alphar):#Module of internal shocks radius
     return 2*alphar*r_star*pow(gammac,2)*1/cm
 
 def Tin(Ec, thetac, r_star):

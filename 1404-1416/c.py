@@ -1,4 +1,8 @@
-import math as mt, a
+'''
+Here are the values of the experiment that
+we need to use
+'''
+
 from math import *
 from a import *
 
@@ -41,11 +45,6 @@ Enu030=30.0
 
 Enu0=Enu05
 phi=0.0
-
-
-
-
-
 
 eV=1.0
 
