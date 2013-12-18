@@ -1,8 +1,5 @@
-from ROOT import TCanvas, TPad, TFormula, TF1, TPaveLabel, TH1F,TFile,TGraphErrors, TGraph, gStyle, gPad, TMarker, TMultiGraph
-from ROOT import gROOT
 from array import array
 import os
-import ROOT as rt
 import numpy as np
 import matplotlib.pyplot as plt
 from sys import *
@@ -12,18 +9,6 @@ from math import *
 from scipy.interpolate import interp1d
 from scipy.interpolate import pchip
 from scipy import interpolate
-
-gROOT.Reset()
-
-gStyle.SetFillColor(0)
-gStyle.SetPadLeftMargin(.20)
-gStyle.SetPadBottomMargin(.20)
-gStyle.SetCanvasColor(10)
-gStyle.SetFrameFillColor(0);
-gStyle.SetCanvasBorderMode(0);
-
-gStyle.SetOptFit(111111)
-mg = TMultiGraph()
 
 saves = {}
 NP = 0
@@ -79,7 +64,7 @@ def make_plot1():
     xe1 = []
     ye1 = []
 
-    filename1 = "/Users/nifraija/Desktop/2013/recover/FRI/CenA_I/north_lobe/nlob_syn.dat"
+    filename1 = "records.dat"
     ifile = open(filename1,"r")
     if ifile:
         for line in ifile:
@@ -89,12 +74,11 @@ def make_plot1():
             xe1.append(c1)
             ye1.append(d1)
             NP1 = NP1 + 1
-
         
         X1 = np.array(x1,float)
-        XE1 = np.array(xe1,float)
-        Y1 = np.array(y1,float)
-        YE1 = np.array(ye1,float)
+        #XE1 = np.array(xe1,float)
+        #Y1 = np.array(y1,float)
+        #YE1 = np.array(ye1,float)
 
         gr1 = TGraphErrors(NP1,X1,Y1,XE1,YE1)
         gr1.SetMarkerSize(0.7)
