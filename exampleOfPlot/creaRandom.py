@@ -12,7 +12,7 @@ def _fileMaker():#Here we can write a file into the path
     f.close()
 
 def _makeNum():#Here we make a 10000 random numbers into the file
-    for x in range(1, 10000):
+    for x in range(1, 100):
         _writeNum(random.random()*10)
 
 def _writeNum(num):#Here we wrote the numbers into the file

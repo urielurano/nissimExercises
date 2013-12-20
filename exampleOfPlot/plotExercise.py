@@ -9,24 +9,45 @@ import matplotlib.pyplot as plt
 
 listOfRecords = readRecord() #A list of random numbers
 
+
+def _powerOfAList(list, num):#Make the n-power of the elements of a list of numbers
+    power = []
+    for x in range(len(list)):
+        try:
+            power.append(pow(list[x], num))
+        except:
+            print 'Invalid list'
+    return power
+
+
 def plot1(): #One case of a simple plot
-    plt.figure('Grafica 1')
+    plt.figure('Plot 1')
     plt.plot(listOfRecords)
-    plt.xlabel('like in the example one')
     plt.savefig('graph1.png')
     plt.show()
 
 def plot2(): #Here we plot a random array were i = list[i]
-    plt.figure('Grafica 2')
+    plt.figure('Plot 2')
     vector = [x for x in range(len(listOfRecords))]
     plt.plot(vector,listOfRecords, 'ro')
     plt.axis([0, 50, 0, max(listOfRecords)])
-    plt.xlabel('like in the example two')
     plt.savefig('graph2.png')
     plt.show()
 
-    
+def plot3():#Anoter example of a plot, different functions on the same plane
+    plt.figure('Plot 3')
+    array = sorted(listOfRecords)#Make a sort of the records
+    array2 = _powerOfAList(array,2)
+    array3 = _powerOfAList(array,1/2)
+    plt.plot(array, array, 'bs', array2, array2, 'g^',array3, array3, 'r^')
+    plt.axis([0, 10, 0, max(listOfRecords)])
+    plt.savefig('graph3.png')
+    plt.show()
 
 
-plot1()
-plot2()
+
+
+
+#plot1()
+#plot2()
+plot3()
