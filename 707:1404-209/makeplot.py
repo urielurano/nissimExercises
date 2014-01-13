@@ -63,14 +63,12 @@ def fEpsilon():
         X = np.array(x,float)
         Y = np.array(y,float)
         rw1=plt.plot(X,Y,color="green", linewidth=1.0, linestyle="-", label="E$_\pi$")
-        '''
         a=plt.gca()
         a.set_yscale('log')
         a.set_xscale('log')
         plt.xlabel(r'$\epsilon_B$', size=12)
         plt.ylabel(r'E$_\nu$ (eV)', size=12)
         plt.title('')
-        '''
         plt.show()
     except ValueError:
         print 'Diferents values of the dimentions of x and y'
