@@ -47,16 +47,16 @@ def fEpsilon():
         x.append(epsilon)
         if(epsilon < epsilonASC):
             y.append(fEpsilonECSC*pow(epsilonASC/epsilonCSC,1.0/3.0)*epsilon/epsilonASC)
-            break
+            continue
         if(epsilonASC < epsilon and epsilon < epsilonCSC):
             y.append(fEpsilonECSC*pow(epsilon/epsilonCSC,1.0/3.0))
-            break
+            continue
         if(epsilonCSC < epsilon and epsilon < epsilonMSC):
             y.append(fEpsilonECSC*pow(epsilon/epsilonCSC,-1.0/2.0))
-            break
+            continue
         if(epsilonMSC < epsilon):
             y.append(fEpsilonECSC*pow(epsilonMSC/epsilonCSC,-1.0/2.0)*pow(epsilon/epsilonMSC,-1.0/2.0))
-            break
+            continue
         y.append(0)
 
     try:
