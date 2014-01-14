@@ -1,16 +1,19 @@
 
 from b import *
 from math import *
+from scipy.interpolate import interp1d
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def fEpsilonCo():
+    '''We here make the plot of the function fEpsilonCo'''
     x = []
     y = []
     epsilonPhCo = En(Ec, r_star, gammac,alphar, thetac)
     fEpsilonPhCo = fcon(Ec, r_star, gammac,alphar, thetac)
 
-
+    #Here make the aranges to make the plot
     for ii in np.arange(-1.0,3.0,0.1):
         epsilon = pow(10,ii)
         x.append(epsilon)
@@ -18,11 +21,11 @@ def fEpsilonCo():
             y.append(fEpsilonPhCo*pow(epsilon/epsilonPhCo,2.0))
         if epsilon > epsilonPhCo:
             y.append(fEpsilonPhCo*pow(epsilon/epsilonPhCo,-1.0))
-
+    #Now we want make the plot of the array
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
-        rw1=plt.plot(X,Y1,color="green", linewidth=1.0, linestyle="-", label="E$_\pi$")
+        rw1=plt.plot(X,Y,color="green", linewidth=1.0, linestyle="-", label="E$_\pi$")
         a=plt.gca()
         a.set_yscale('log')
         a.set_xscale('log')
@@ -31,14 +34,20 @@ def fEpsilonCo():
         plt.title('')
         plt.show()
     except ValueError:
-        print 'Diferent values on the plots'
+        print 'Exception making the plot'
+        raise
+
+    #Here we make the spline of the function
+    try:
+        f = interp1d(X, Y)
+
 
         
 def fEpsilon():
     x = []
     y = []
-    epsilonCSC = 0.1 #change this value to the trust
-    epsilonASC = 1e4 #change this value to the trust
+    epsilonCSC = 0.1 #change this value
+    epsilonASC = 1e4 #change this value
     epsilonMSC = E_mssc(xiB,Lj, gammaj,dt)
     fEpsilonECSC = opt(Lj, z,gammaj, dt)*Fco(xiB,Lj, gammaj,dt,dz)
 
@@ -74,4 +83,6 @@ def fEpsilon():
         print 'Diferents values of the dimentions of x and y'
         raise    
 
-fEpsilon()
+
+fEpsilonCo()
+#fEpsilon()
