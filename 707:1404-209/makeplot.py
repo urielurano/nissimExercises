@@ -74,37 +74,16 @@ def fEpsilon():
         X = np.array(x,float)
         Y = np.array(y,float)
         #Make here the spline
-        x1new = np.linspace(10e-2, (10e3)/15,10e5)#check here
-        x2new = np.linspace(10e-2, (10e3)/30,10e5)#check here
-        x3new = np.linspace(10e-2, (10e3)/60,10e5)#check here
-        x4new = np.linspace(10e-2, (10e3)/90,10e5)#check here 
+        x_new = np.linspace(10e-2, (10e3)/15,10e6)#check here 
         f = interp1d(X, Y, kind='cubic')
-        plt.figure('graph')
-        plt.subplot(411)
+        plt.figure('graph of fEpsilon')
         plt.plot(X,Y,color = 'blue', linestyle = '-')
-        plt.plot(x1new,f(x1new), color = 'red', linestyle = '--')
-        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
-        ############################################################################
-        plt.subplot(412)
-        plt.plot(X,Y,color = 'blue', linestyle = '-')
-        plt.plot(x2new,f(x2new), color = 'green', linestyle = '--')
-        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
-        ############################################################################  
-        plt.subplot(413)
-        plt.plot(X,Y,color = 'blue', linestyle = '-')
-        plt.plot(x3new,f(x3new), color = 'magenta', linestyle = '--')
-        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
-        ############################################################################
-        plt.subplot(414)
-        plt.plot(X,Y,color = 'blue', linestyle = '-')
-        plt.plot(x4new,f(x4new), color = 'cyan', linestyle = '--')
-        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
-        ############################################################################  
-        a=plt.gca()
-        a.set_yscale('log')
-        a.set_xscale('log')
+        plt.plot(x_new,f(x_new), color = 'red', linestyle = '--')
+        plt.legend(['original','spline with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
         plt.ylabel(r'epsilon', size=12)
-        plt.title('fEpsilon')
+        #a=plt.gca()
+        #a.set_yscale('log')
+        #a.set_xscale('log')
         plt.show()
     except ValueError:
         print 'Please check the values of your module by this exception:'
