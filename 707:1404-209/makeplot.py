@@ -26,7 +26,7 @@ def fEpsilonCo():
         X = np.array(x,float)
         Y = np.array(y,float)
         #Here we make the spline of the function
-        xnew = np.linspace(10e-2, 10e2) 
+        xnew = np.linspace(10e-2,(10e2)/2,10e3) 
         f = interp1d(X, Y, kind='cubic')
         plt.plot(X,Y, color = 'blue', linestyle = '-')
         plt.plot(xnew,f(xnew), color = 'red', linestyle = '--')
@@ -74,22 +74,32 @@ def fEpsilon():
         X = np.array(x,float)
         Y = np.array(y,float)
         #Make here the spline
-        x1new = np.linspace(10e-2, (10e3)/15)#check here
-        x2new = np.linspace(10e-2, (10e3)/30)#check here
-        x3new = np.linspace(10e-2, (10e3)/60)#check here
-        x4new = np.linspace(10e-2, (10e3)/90)#check here 
+        x1new = np.linspace(10e-2, (10e3)/15,10e5)#check here
+        x2new = np.linspace(10e-2, (10e3)/30,10e5)#check here
+        x3new = np.linspace(10e-2, (10e3)/60,10e5)#check here
+        x4new = np.linspace(10e-2, (10e3)/90,10e5)#check here 
         f = interp1d(X, Y, kind='cubic')
+        plt.figure('graph')
+        plt.subplot(411)
         plt.plot(X,Y,color = 'blue', linestyle = '-')
         plt.plot(x1new,f(x1new), color = 'red', linestyle = '--')
+        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
+        ############################################################################
+        plt.subplot(412)
+        plt.plot(X,Y,color = 'blue', linestyle = '-')
         plt.plot(x2new,f(x2new), color = 'green', linestyle = '--')
+        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
+        ############################################################################  
+        plt.subplot(413)
+        plt.plot(X,Y,color = 'blue', linestyle = '-')
         plt.plot(x3new,f(x3new), color = 'magenta', linestyle = '--')
+        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
+        ############################################################################
+        plt.subplot(414)
+        plt.plot(X,Y,color = 'blue', linestyle = '-')
         plt.plot(x4new,f(x4new), color = 'cyan', linestyle = '--')
-        str0 = 'original'
-        str1 = 'spline cubic with a maximum (10e3)/15'
-        str2 = 'spline cubic with a maximum (10e3)/30'
-        str3 = 'spline cubic with a maximun (10e3)/60'
-        str4 = 'spline cubic with a maximun (10e3)/90'
-        plt.legend([str0, str1, str2, str3, str4], loc='best')
+        plt.legend(['original','splie with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
+        ############################################################################  
         a=plt.gca()
         a.set_yscale('log')
         a.set_xscale('log')
@@ -100,5 +110,5 @@ def fEpsilon():
         print 'Please check the values of your module by this exception:'
         raise    
 
-fEpsilonCo()
-#fEpsilon()
+#fEpsilonCo()
+fEpsilon()
