@@ -26,7 +26,7 @@ def fEpsilonCo():
         X = np.array(x,float)
         Y = np.array(y,float)
         #Here we make the spline of the function
-        xnew = np.linspace(10e-2, 10e2) 
+        xnew = np.linspace(10e-2, (10e2)) 
         f = interp1d(X, Y, kind='cubic')
         plt.plot(X,Y, color = 'blue', linestyle = '-')
         plt.plot(xnew,f(xnew), color = 'red', linestyle = '--')
