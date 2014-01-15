@@ -26,17 +26,15 @@ def fEpsilonCo():
         X = np.array(x,float)
         Y = np.array(y,float)
         #Here we make the spline of the function
-        xnew = np.linspace(10e-2,(10e2)/2,10e3) 
+        x_new = np.linspace(10e-2,(10e2)/2,10e3) 
         f = interp1d(X, Y, kind='cubic')
         plt.plot(X,Y, color = 'blue', linestyle = '-')
-        plt.plot(xnew,f(xnew), color = 'red', linestyle = '--')
+        plt.plot(x_new,f(x_new), color = 'red', linestyle = '--')
         plt.legend(['original','spline cubic'], loc='best')
+        plt.ylabel(r'epsilon', size=12)
         a=plt.gca()
         a.set_yscale('log')
         a.set_xscale('log')
-        plt.xlabel(r'$\epsilon_B$', size=12)
-        plt.ylabel(r'E$_\nu$ (eV)', size=12)
-        plt.title('')
         plt.show()
     except ValueError:
         print 'Please check the values of your module by this exception:'
@@ -76,18 +74,23 @@ def fEpsilon():
         #Make here the spline
         x_new = np.linspace(10e-2, (10e3)/15,10e6)#check here 
         f = interp1d(X, Y, kind='cubic')
-        plt.figure('graph of fEpsilon')
+        plt.subplot(121)
         plt.plot(X,Y,color = 'blue', linestyle = '-')
         plt.plot(x_new,f(x_new), color = 'red', linestyle = '--')
         plt.legend(['original','spline with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
         plt.ylabel(r'epsilon', size=12)
-        #a=plt.gca()
-        #a.set_yscale('log')
-        #a.set_xscale('log')
+        plt.subplot(122)
+        plt.plot(X,Y,color = 'blue', linestyle = '-')
+        plt.plot(x_new,f(x_new), color = 'red', linestyle = '--')
+        plt.legend(['original','spline with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
+        plt.ylabel(r'epsilon', size=12)
+        a=plt.gca()
+        a.set_yscale('log')
+        a.set_xscale('log')
         plt.show()
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise    
 
-#fEpsilonCo()
+fEpsilonCo()
 fEpsilon()
