@@ -1,7 +1,7 @@
 
 from b import *
 from math import *
-from scipy.interpolate import interp1d
+from scipy.interpolate import interp1d, pchip, InterpolatedUnivariateSpline, Rbf
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -71,26 +71,54 @@ def fEpsilon():
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
-        #Make here the spline
-        x_new = np.linspace(10e-2, (10e3)/15,10e6)#check here 
-        f = interp1d(X, Y, kind='cubic')
-        plt.subplot(121)
-        plt.plot(X,Y,color = 'blue', linestyle = '-')
-        plt.plot(x_new,f(x_new), color = 'red', linestyle = '--')
-        plt.legend(['original','spline with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
-        plt.ylabel(r'epsilon', size=12)
-        plt.subplot(122)
-        plt.plot(X,Y,color = 'blue', linestyle = '-')
-        plt.plot(x_new,f(x_new), color = 'red', linestyle = '--')
-        plt.legend(['original','spline with a linspace from 10e-2 to 10e3/15 of 10e5' ], loc='best')
-        plt.ylabel(r'epsilon', size=12)
+        #Make here the spline interp1d
+        x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
+        f1 = interp1d(X, Y, kind='linear')
+        f2 = interp1d(X, Y, kind='nearest')
+        f3 = interp1d(X, Y, kind='zero')
+        f4 = interp1d(X, Y, kind='slinear')
+        f5 = interp1d(X, Y, kind='quadratic')
+        f6 = interp1d(X, Y, kind='cubic')
+        str1 = 'spline with interp1d linear'
+        str2 = 'spline with interp1d nearest'
+        str3 = 'spline with interp1d zero'
+        str4 = 'spline with interp1d slinear'
+        str5 = 'spline with interp1d quadratic'
+        str6 = 'spline with interp1d cubic'
+        plt.figure(1)
+        plt.plot(X,Y,color = 'blue',linestyle = '-')
+        plt.plot(x_new,f1(x_new), color = 'black', linestyle = '--')
+        plt.plot(x_new,f2(x_new), color = 'green', linestyle = '--')
+        plt.plot(x_new,f3(x_new), color = 'yellow', linestyle = '--')
+        plt.plot(x_new,f4(x_new), color = 'cyan', linestyle = '--')
+        plt.plot(x_new,f5(x_new), color = 'magenta', linestyle = '--')
+        plt.plot(x_new,f6(x_new), color = 'red', linestyle = '--')
+        plt.legend(['original',str1,str2,str3,str4,str5,str6], loc='best')
+        plt.xlim(0,10e2)
         a=plt.gca()
         a.set_yscale('log')
         a.set_xscale('log')
+        plt.ylabel(r'epsilon', size=12)
+        #Second spline, here we use the interpolated UnivariateSpline
+        s = InterpolatedUnivariateSpline(X,Y)
+        y2_new = s(x_new)
+        plt.figure(2)
+        plt.plot(X,Y, color = 'blue', linestyle = '-')
+        plt.plot(x_new, y2_new, color = 'red', linestyle = '--')
+        plt.legend(['original', 'Spline with UnivariateSpline'], loc = 'best')
+        plt.ylabel(r'epsilon', size = 12)
+        #third spline, rbf
+        rbf = Rbf(X,Y)
+        fi = rbf(x_new)
+        plt.figure(3)
+        plt.plot(X,Y, color = 'blue', linestyle = '-')
+        plt.plot(x_new, y2_new, color = 'red', linestyle = '--')
+        plt.legend(['original', 'Spline with rbf'], loc = 'best')
+        plt.ylabel(r'epsilon', size = 12)
         plt.show()
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise    
 
-fEpsilonCo()
+#fEpsilonCo()
 fEpsilon()
