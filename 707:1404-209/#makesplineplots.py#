@@ -86,5 +86,81 @@ def interp1dPlot(X, Y, Z):
     plt.ylabel(r'epsilon', size=12)
     
 @staticmethod
-def UnivariateSplinePlot(X, Y)
+def UnivariateSplinePlot(X, Y, Z):
     
+    '''Second spline, here we use the interpolated UnivariateSpline'''
+    
+    s1 = InterpolatedUnivariateSpline(X,Y,k = 1)
+    y21_new = s1(x_new)
+    s2 = InterpolatedUnivariateSpline(X,Y,k = 2)
+    y22_new = s2(x_new)
+    s3 = InterpolatedUnivariateSpline(X,Y,k = 3)
+    y23_new = s3(x_new)
+    s4 = InterpolatedUnivariateSpline(X,Y,k = 4)
+    y24_new = s4(x_new)
+    s5 = InterpolatedUnivariateSpline(X,Y,k = 5)
+    y25_new = s5(x_new)
+    str1 = 'Spline with UnivariateSpline with k = 1'
+    str2 = 'Spline with UnivariateSpline with k = 2'
+    str3 = 'Spline with UnivariateSpline with k = 3'
+    str4 = 'Spline with UnivariateSpline with k = 4'
+    str5 = 'Spline with UnivariateSpline with k = 5'
+    
+    plt.figure(2)
+    plt.subplot(231)
+    plt.plot(X,Y,color = 'blue',linestyle = '-')
+    plt.plot(x_new,y21_new, color = 'black', linestyle = '--')
+    plt.legend(['original',str1], loc=8)
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+    plt.ylabel(r'epsilon', size=12)
+    plt.subplot(232)
+    plt.plot(X,Y,color = 'blue',linestyle = '-')
+    plt.plot(x_new,y22_new, color = 'green', linestyle = '--')
+    plt.legend(['original',str2], loc=8)
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+    plt.ylabel(r'epsilon', size=12)
+    plt.subplot(233)
+    plt.plot(X,Y,color = 'blue',linestyle = '-')
+    plt.plot(x_new,y23_new, color = 'orange', linestyle = '--')
+    plt.legend(['original',str3], loc=8)
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+    plt.ylabel(r'epsilon', size=12)
+    plt.subplot(234)
+    plt.plot(X,Y,color = 'blue',linestyle = '-')
+    plt.plot(x_new,y24_new, color = 'cyan', linestyle = '--')
+    plt.legend(['original',str4], loc=8)
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+    plt.ylabel(r'epsilon', size=12)
+    plt.subplot(235)
+    plt.plot(X,Y,color = 'blue',linestyle = '-')
+    plt.plot(x_new,y25_new, color = 'magenta', linestyle = '--')
+    plt.legend(['original',str5], loc=8)
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+    plt.ylabel(r'epsilon', size=12)
+    
+    #######################Now, all in one######################################
+    plt.figure(3)
+    plt.plot(X,Y, color = 'blue', linestyle = '-')
+    plt.plot(x_new,y21_new, color = 'black', linestyle = '--')
+    plt.plot(x_new,y22_new, color = 'green', linestyle = '--')
+    plt.plot(x_new,y23_new, color = 'orange', linestyle = '--')
+    plt.plot(x_new,y24_new, color = 'cyan', linestyle = '--')
+    plt.plot(x_new,y25_new, color = 'magenta', linestyle = '--')
+    plt.legend(['original',str1,str2,str3,str4,str5], loc = 'best')
+    plt.ylabel(r'epsilon', size = 12)
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+    plt.ylabel(r'epsilon', size=12)
+        
+
