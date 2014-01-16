@@ -71,8 +71,12 @@ def fEpsilon():
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
-        #Make here the spline interp1d
         x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
+        '''
+        #########################################################
+        ################Make here the spline interp1d############
+        #########################################################
+
         f1 = interp1d(X, Y, kind='linear')
         f2 = interp1d(X, Y, kind='nearest')
         f3 = interp1d(X, Y, kind='zero')
@@ -121,6 +125,9 @@ def fEpsilon():
         plt.subplot(235)
         plt.plot(X,Y,color = 'blue',linestyle = '-')
         plt.plot(x_new,f5(x_new), color = 'magenta', linestyle = '--')
+	a=plt.gca()
+        a.set_yscale('log')
+        a.set_xscale('log')
         plt.legend(['original',str5], loc=8)
         plt.subplot(236)
         plt.plot(X,Y,color = 'blue',linestyle = '-')
@@ -132,6 +139,7 @@ def fEpsilon():
         plt.ylabel(r'epsilon', size=12)
 
         ####################Now, all the plots in one############################
+        
         plt.figure(1)
         plt.plot(X,Y,color = 'blue',linestyle = '-')
         plt.plot(x_new,f1(x_new), color = 'black', linestyle = '--')
@@ -146,8 +154,11 @@ def fEpsilon():
         a.set_yscale('log')
         a.set_xscale('log')
         plt.ylabel(r'epsilon', size=12)
+        
+        #########################################################################
+        ######Second spline, here we use the interpolated UnivariateSpline#######
+        #########################################################################
 
-        #Second spline, here we use the interpolated UnivariateSpline
         s1 = InterpolatedUnivariateSpline(X,Y,k = 1)
         y21_new = s1(x_new)
         s2 = InterpolatedUnivariateSpline(X,Y,k = 2)
@@ -220,15 +231,41 @@ def fEpsilon():
         a.set_yscale('log')
         a.set_xscale('log')
         plt.ylabel(r'epsilon', size=12)
+        '''
 
-        #third spline, rbf
-        rbf = Rbf(X,Y, function = 'quintic')
-        fi = rbf(x_new)
+        #################################################################
+        ######################third spline, rbf##########################
+        #################################################################
+
+        ######################In subplots################################
         plt.figure(4)
+        #plt.subplot(231) 
+        rbf1 = Rbf(X,Y, function = 'multiquadric',epsilon = 10e-1, smooth = 10e-10)
+        fi1 = rbf1(x_new)
         plt.plot(X,Y, color = 'blue', linestyle = '-')
-        plt.plot(x_new, fi, color = 'red', linestyle = '--')
-        plt.legend(['original', 'Spline with rbf'], loc = 'best')
+        plt.plot(x_new, fi1, color = 'red', linestyle = '--')
+        plt.legend(['original', 'Spline with rbf multicuadratic'], loc = 'best')
+        plt.xlim(0,200)
+        plt.ylim(-250,300)
+        #a=plt.gca()
+        #a.set_yscale('log')
+        #a.set_xscale('log')
+        #plt.ylabel(r'epsilon', size = 12)
+        '''
+        plt.figure(5)#delete this line
+        #plt.subplot(232)
+        rbf2 = Rbf(X,Y, function = 'inverse')
+        fi2 = rbf2(x_new)
+        plt.plot(X,Y, color = 'blue', linestyle = '-')
+        plt.plot(x_new, fi2, color = 'green', linestyle = '--')
+        plt.legend(['original', 'Spline with rbf inverse'], loc = 'best')
+        plt.xlim(0,200)
+        plt.ylim(-250,300)
+        #a=plt.gca()
+        #a.set_yscale('log')
+        #a.set_xscale('log')
         plt.ylabel(r'epsilon', size = 12)
+        '''
         plt.show()
     except ValueError:
         print 'Please check the values of your module by this exception:'
