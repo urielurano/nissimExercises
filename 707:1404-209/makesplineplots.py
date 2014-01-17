@@ -172,18 +172,55 @@ def UnivariateSplinePlot(X, Y, x_new):
 def rbfplot(X, Y, x_new, **param):
 
     '''Make the plot of a interpolated function with Rbf'''
-
+    set1 = set(['function','epsilon','smooth'])
+    set2 = set(param.keys())
+    set3 = set1.intersection(set2)
+    name,smth,epsi='   '
+    #I'm going to call to rbf with the wanted param
+    #for this I make sets with the possible call of
+    #the original rbf 
+    if(len(set3) > 0):
+        if(set3 == set(['function','epsilon', 'smooth'])):
+            rbf1 = Rbf(X,Y,function=param['function'],epsilon=param['epsilon'],smooth=param['smooth'])
+            name = param['function']
+            epsi = str(param['epsilon'])
+            smth = str(param['smooth'])
             
+        if(set3 == set(['epsilon', 'smooth'])):
+            rbf1 = Rbf(X,Y,epsilon=param['epsilon'],smooth=param['smooth'])
+            epsi = str(param['epsilon'])
+            smth = str(param['smooth'])
+                
+        if(set3 == set(['function', 'smooth'])):
+            rbf1 = Rbf(X,Y,function=param['function'],smooth=param['smooth'])
+            name = param['function']
+            smth = str(param['smooth'])
+            
+        if(set3 == set(['function','epsilon'])):
+            rbf1 = Rbf(X,Y,function=param['function'],epsilon=param['epsilon'])
+            name = param['function']
+            epsi = str(param['epsilon'])
+            
+        if(set3 == set(['function'])):
+            rbf1 = Rbf(X,Y,function=param['function'])
+            name = param['function']
+                
+        if(set3 == set(['epsilon'])):
+            rbf1 = Rbf(X,Y,epsilon=param['epsilon'])
+            epsi = str(param['epsilon'])
 
+        if(set3 == set(['smooth'])):
+            rbf1 = Rbf(X,Y,smooth=param['smooth'])
+            smth = str(param['smooth'])
+    else:
+        rbf1 = Rbf(X,Y)
+    #Now im going to graph
     plt.figure()
-    #plt.subplot(231) 
-    #rbf1 = Rbf(X,Y, function = 'multiquadric',epsilon = 10e-1, smooth = 10e-10)
-    #rbf1 = Rbf(X,Y, function = 'multiquadric')
-    rbf1 = Rbf(X,Y, function = 'multiquadric', smooth = 10e-10, epsilon = 10e-1)
     fi1 = rbf1(x_new)
     plt.plot(X,Y, color = 'blue', linestyle = '-')
     plt.plot(x_new, fi1, color = 'red', linestyle = '--')
-    plt.legend(['original', 'Spline with rbf multicuadratic'], loc = 'best')
+    plt.legend(['original', 'Spline rbf with function='+name+' epsilon='+epsi+' with smooth='+
+                smth], loc = 'best')
     plt.ylabel(r'epsilon', size = 12)
     a=plt.gca()
     a.set_yscale('log')

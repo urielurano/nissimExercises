@@ -24,7 +24,7 @@ def fEpsilonCo():
         Y = np.array(y,float)
 	x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
         #CALL HERE THE PLOTS
-	rbfplot(X, Y, x_new)
+        rbfplot(X, Y, x_new,function='cubic')
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise
@@ -62,7 +62,7 @@ def fEpsilon():
         Y = np.array(y,float)
         x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
 	#CALL HERE THE PLOTS        
-        rbfplot(X, Y, x_new)
+        rbfplot(X, Y, x_new, function='cubic')
         
     except ValueError:
         print 'Please check the values of your module by this exception:'
