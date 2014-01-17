@@ -172,12 +172,14 @@ def UnivariateSplinePlot(X, Y, x_new):
 def rbfplot(X, Y, x_new, **param):
 
     '''Make the plot of a interpolated function with Rbf'''
-    
-    ######################In subplots################################
+
+            
+
     plt.figure()
     #plt.subplot(231) 
     #rbf1 = Rbf(X,Y, function = 'multiquadric',epsilon = 10e-1, smooth = 10e-10)
-    rbf1 = Rbf(X,Y, function = 'multiquadric')
+    #rbf1 = Rbf(X,Y, function = 'multiquadric')
+    rbf1 = Rbf(X,Y, function = 'multiquadric', smooth = 10e-10, epsilon = 10e-1)
     fi1 = rbf1(x_new)
     plt.plot(X,Y, color = 'blue', linestyle = '-')
     plt.plot(x_new, fi1, color = 'red', linestyle = '--')
