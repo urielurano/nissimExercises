@@ -1,10 +1,7 @@
-
 from b import *
 from math import *
-from scipy.interpolate import interp1d, pchip, InterpolatedUnivariateSpline, Rbf
+from makesplineplots import *
 import numpy as np
-import matplotlib.pyplot as plt
-
 	
 def fEpsilonCo():
     '''We here make the plot of the function fEpsilonCo'''
@@ -25,7 +22,9 @@ def fEpsilonCo():
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
-        _fEpsilonCointerp1d(X, Y)
+	x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
+        #CALL HERE THE PLOTS
+	rbfplot(X, Y, x_new)
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise
@@ -61,46 +60,13 @@ def fEpsilon():
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
+        x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
+	#CALL HERE THE PLOTS        
+        rbfplot(X, Y, x_new)
         
-        
-        
-        #################################################################
-        ######################third spline, rbf##########################
-        #################################################################
-
-        ######################In subplots################################
-        plt.figure(4)
-        #plt.subplot(231) 
-        rbf1 = Rbf(X,Y, function = 'multiquadric',epsilon = 10e-1, smooth = 10e-10)
-        fi1 = rbf1(x_new)
-        plt.plot(X,Y, color = 'blue', linestyle = '-')
-        plt.plot(x_new, fi1, color = 'red', linestyle = '--')
-        plt.legend(['original', 'Spline with rbf multicuadratic'], loc = 'best')
-        plt.xlim(0,200)
-        plt.ylim(-250,300)
-        #a=plt.gca()
-        #a.set_yscale('log')
-        #a.set_xscale('log')
-        #plt.ylabel(r'epsilon', size = 12)
-        '''
-        plt.figure(5)#delete this line
-        #plt.subplot(232)
-        rbf2 = Rbf(X,Y, function = 'inverse')
-        fi2 = rbf2(x_new)
-        plt.plot(X,Y, color = 'blue', linestyle = '-')
-        plt.plot(x_new, fi2, color = 'green', linestyle = '--')
-        plt.legend(['original', 'Spline with rbf inverse'], loc = 'best')
-        plt.xlim(0,200)
-        plt.ylim(-250,300)
-        #a=plt.gca()
-        #a.set_yscale('log')
-        #a.set_xscale('log')
-        plt.ylabel(r'epsilon', size = 12)
-        '''
-        plt.show()
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise    
 
-fEpsilonCo()
-#fEpsilon()
+#fEpsilonCo()
+fEpsilon()
