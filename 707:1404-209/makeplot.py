@@ -62,8 +62,10 @@ def fEpsilon():
         Y = np.array(y,float)
         x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
 	#CALL HERE THE PLOTS
-        rbfplot(X, Y, x_new, function='cubic',epsilon=pow(10,-1),smooth=pow(10,-2))
-        interp1dPlot(X, Y, x_new, kind='cubic')
+        #rbfplot(X, Y, x_new, function='cubic',epsilon=pow(10,-1),smooth=pow(10,-2))
+        #UnivariateSplinePlot(X, Y, x_new, k=4)
+        #interp1dPlot(X, Y, x_new, kind='cubic')
+        PchipInterpolatorPlot(X,Y,x_new, axis = int(10e5))
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise    
