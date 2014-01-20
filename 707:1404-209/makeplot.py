@@ -22,15 +22,14 @@ def fEpsilonCo():
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
-	x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
+	x_new = np.linspace(10e-2, 500, 10e4)
         #CALL HERE THE PLOTS
         
-        UnivariateSplinePlot(X, Y, x_new, k = 1)
-        rbfplot(X, Y, x_new, function='cubic',epsilon=pow(10,-3-1),smooth=pow(10,-3))
-        interp1dPlot(X, Y, x_new, kind='nearest')
-        PchipInterpolatorPlot(X,Y,x_new)
+        #UnivariateSplinePlot(X, Y, x_new, k = 4)
+        #rbfplot(X, Y, x_new, function='cubic')
+        #interp1dPlot(X, Y, x_new, kind='nearest')
+        #PchipInterpolatorPlot(X,Y,x_new)
         pchipPlot(X, Y, x_new)
-
 
 
     except ValueError:
@@ -82,4 +81,4 @@ def fEpsilon():
 
 if __name__ == '__main__':
     fEpsilonCo()
-    fEpsilon()
+    #fEpsilon()

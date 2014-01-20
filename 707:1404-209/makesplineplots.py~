@@ -39,7 +39,7 @@ def interp1dPlot(X, Y, x_new, **args):
     #Here Im going to save the file on disk if the                                                                                                
     #user want 
     if('save' in set2):
-        if(type(args['save']) == bool and args['save'] ==  True):
+        if(type(args['save']) == bool):
             plt.savefig(title+'.png')
     
 
@@ -84,7 +84,7 @@ def UnivariateSplinePlot(X, Y, x_new, **args):
     #Here Im going to save the file on disk if the
     #user want
     if('save' in set2):
-        if(type(args['save']) == bool and args['save'] ==  True):
+        if(type(args['save']) == bool):
             plt.savefig(title+'.png')
 
 
@@ -155,7 +155,7 @@ def rbfplot(X, Y, x_new, **args):
     #Here Im going to save the file on disk if the
     #user want
     if('save' in set2):
-        if(type(args['save']) == bool and args['save'] ==  True):
+        if(type(args['save']) == bool):
             plt.savefig(title+'.png')
 
 
