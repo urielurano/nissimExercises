@@ -29,7 +29,7 @@ def fEpsilonCo():
         #rbfplot(X, Y, x_new, function='cubic')
         #interp1dPlot(X, Y, x_new, kind='nearest')
         #PchipInterpolatorPlot(X,Y,x_new)
-        pchipPlot(X, Y, x_new)
+        pchipPlot(X, Y, x_new, save = True)
 
 
     except ValueError:

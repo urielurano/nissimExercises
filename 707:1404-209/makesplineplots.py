@@ -13,7 +13,7 @@ def interp1dPlot(X, Y, x_new, **args):
     set2 = set(args.keys())
     set3 = set1.intersection(set2)
     kind = 'with a kind '
-    title = 'interp1d spline plot '
+    title = 'interp1d_spline_plot'
     if('kind' in set3):
         f1 = interp1d(X, Y, kind=args['kind'])
         kind = kind+args['kind']
@@ -40,7 +40,8 @@ def interp1dPlot(X, Y, x_new, **args):
     #user want 
     if('save' in set2):
         if(type(args['save']) == bool and args['save'] ==  True):
-            plt.savefig(title+'.png')
+            plt.savefig(title.strip()+'.png')
+            plt.draw()
     
 
 def UnivariateSplinePlot(X, Y, x_new, **args):
@@ -51,7 +52,7 @@ def UnivariateSplinePlot(X, Y, x_new, **args):
     set2 = set(args.keys())
     set3 = set1.intersection(set2)
     value = 'with k value = '
-    title = 'Univariate Spline Plot '
+    title = 'Univariate_Spline_Plot'
     if('k' in set3):
         if(args['k']<= 5 and args['k'] >= 1 and type(args['k']) == int):
             s = InterpolatedUnivariateSpline(X,Y,k = args['k'])
@@ -85,7 +86,8 @@ def UnivariateSplinePlot(X, Y, x_new, **args):
     #user want
     if('save' in set2):
         if(type(args['save']) == bool and args['save'] ==  True):
-            plt.savefig(title+'.png')
+            plt.savefig(title.strip()+'.png')
+            plt.draw()
 
 
 
@@ -97,7 +99,7 @@ def rbfplot(X, Y, x_new, **args):
     set2 = set(args.keys())
     set3 = (set1.intersection(set2)).difference(set(['wn']))
     name,epsi,smth='   '
-    title = 'Rbf plot'
+    title = 'Rbf_plot'
     if(len(set3) > 0):
         if(set3 == set(['function','epsilon', 'smooth'])):
             rbf1 = Rbf(X,Y,function=args['function'],epsilon=args['epsilon'],smooth=args['smooth'])
@@ -156,7 +158,8 @@ def rbfplot(X, Y, x_new, **args):
     #user want
     if('save' in set2):
         if(type(args['save']) == bool and args['save'] ==  True):
-            plt.savefig(title+'.png')
+            plt.savefig(title.strip()+'.png')
+            plt.draw()
 
 
 def PchipInterpolatorPlot(X,Y,x_new, **args): #WorkInProgress
@@ -166,6 +169,7 @@ def PchipInterpolatorPlot(X,Y,x_new, **args): #WorkInProgress
     set1 = set(['axis'])
     set2 = set(args.keys())
     set3 = set1.intersection(set2)
+    title = 'pchip_interpolator_plot'
     axis = ' '
     if(len(set3)>0):
         if(type(args['axis']) == int):
@@ -175,11 +179,12 @@ def PchipInterpolatorPlot(X,Y,x_new, **args): #WorkInProgress
         pcp = PchipInterpolator(X,Y) 
     if('wn' in set3):
         if(type(args['wn']) == int):
-            plt.figure('pchip plot ' + str(args['nw']))
+	    title = title+str(args['nw'])
+            plt.figure(title)
         else:
             print 'wn is an integer necessary'
     else:
-        plt.figure('pchip interpolate plot')
+        plt.figure(title)
     plt.plot(X,Y, linestyle = '-')
     plt.plot(x_new, pcp(x_new), linestyle = '--')
     plt.legend(['original', 'Spline pchip ' + axis], loc='best')
@@ -188,13 +193,23 @@ def PchipInterpolatorPlot(X,Y,x_new, **args): #WorkInProgress
     a.set_yscale('log')
     a.set_xscale('log')
     plt.show()
+    #Here Im going to save the file on disk if the
+    #user want
+    if('save' in set2):
+        if(type(args['save']) == bool and args['save'] ==  True):
+            plt.savefig(title.strip()+'.png')
+            plt.draw()
+
+
 
 def pchipPlot(X, Y, x_new, **args):
+    title = 'pchip_plot'
     if(args.has_key('wn')):
         if(type(args['wn']) == int):
-            plt.figure('pchip plot '+str(args['wn']))
+	    title = title+str(args['wn'])
+            plt.figure(title)
     else:
-        plt.figure('Pchip plot')
+        plt.figure(title)
     pc = pchip(X,Y)
     plt.plot(X,Y, linestyle = '-')
     plt.plot(x_new, pc(x_new), linestyle = '--')
@@ -203,5 +218,13 @@ def pchipPlot(X, Y, x_new, **args):
     a=plt.gca()
     a.set_yscale('log')
     a.set_xscale('log')
-    plt.show()
+    #plt.show()
+    #Here Im going to save the file on disk if the
+    #user want
+    if(args.has_key('save')):
+        if(type(args['save']) == bool and args['save'] ==  True):
+            plt.savefig(title.strip()+'.png')
+            plt.draw()
+            #plt.show()
+
 
