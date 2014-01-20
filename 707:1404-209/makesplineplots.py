@@ -157,10 +157,8 @@ def PchipInterpolatorPlot(X,Y,x_new, **args): #WorkInProgress
             print 'wn is an integer necessary'
     else:
         plt.figure('pchip interpolate plot')
-
-    plt.figure()
     plt.plot(X,Y, linestyle = '-')
-    plt.plot(x_new, pcp(x_new), linestyle = ':')
+    plt.plot(x_new, pcp(x_new), linestyle = '--')
     plt.legend(['original', 'Spline pchip ' + axis], loc='best')
     plt.ylabel(r'epsilon', size = 12)
     a=plt.gca()
@@ -173,10 +171,10 @@ def pchipPlot(X, Y, x_new, **args):
         if(type(args['wn']) == int):
             plt.figure('pchip plot '+str(args['wn']))
     else:
-        plt.figure('pchip plot')
+        plt.figure('Pchip plot')
     pc = pchip(X,Y)
     plt.plot(X,Y, linestyle = '-')
-    plt.plot(x_new, pc(x_new), linestyle = ':')
+    plt.plot(x_new, pc(x_new), linestyle = '--')
     plt.legend(['original', 'Spline pchip '], loc='best')
     plt.ylabel(r'epsilon', size = 12)
     a=plt.gca()
