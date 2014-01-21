@@ -11,7 +11,7 @@ def fEpsilonCo():
     fEpsilonPhCo = fcon(Ec, r_star, gammac,alphar, thetac)
 
     #Here make the aranges to make the plot
-    for ii in np.arange(-1.0,3.0,0.1):
+    for ii in np.arange(-1.0,3.0,0.2150):
         epsilon = pow(10,ii)
         x.append(epsilon)
         if epsilon < epsilonPhCo:
@@ -24,15 +24,17 @@ def fEpsilonCo():
         Y = np.array(y,float)
 	#x_new = np.linspace(10e-2, 500, 10e4)
         #CALL HERE THE PLOTS
-        
-        #UnivariateSplinePlot(X, Y, x_new, k = 4)
         #rbfplot(X, Y, x_new, function='cubic')
         #interp1dPlot(X, Y, x_new, kind='nearest')
         #PchipInterpolatorPlot(X,Y,x_new)
-        for i in range(0,10):
-            x_new = np.linspace(10e-2,500, pow(10,i))
-            pchipPlot(X, Y, x_new, save = True)
-
+        
+        x_new = np.linspace(10e-2,1000,10000)
+        UnivariateSplinePlot(X, Y, x_new, k = 2, save = True)
+        
+        #for x in np.arange(0,10000,1000):
+        x_new = np.linspace(10e-2,60,500)
+        pchipPlot(X, Y, x_new, save = True)
+        
 
     except ValueError:
         print 'Please check the values of your module by this exception:'

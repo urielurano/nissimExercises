@@ -69,7 +69,7 @@ def UnivariateSplinePlot(X, Y, x_new, **args):
 
     if('wn' in set3):
         if(type(args['wn']) == int):
-            title = title+str(args['nw'])
+            title = title+str(args['wn'])
             plt.figure(title)
         else:
             print 'wn is an integer necessary'
@@ -228,7 +228,7 @@ def pchipPlot(X, Y, x_new, **args):
     a=plt.gca()
     a.set_yscale('log')
     a.set_xscale('log')
-    #Here Im going to save the file on disk if the                                                                                                
+    #Here Im going to save the file on disk if the
     #user want and show the plot on the screen
     if(args.has_key('save')):
         if(type(args['save']) == bool and args['save'] ==  True):
