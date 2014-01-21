@@ -27,7 +27,7 @@ def fEpsilonCo():
 
 	x_new = np.linspace(10e-2, 20, 1000)
         interp1dPlot(X, Y, x_new, kind='quadratic', save = True)
-        '''
+        
         x_new = np.linspace(10e-2,20,100) 
         PchipInterpolatorPlot(X,Y,x_new, save = True)
         x_new = np.linspace(10e-2,20,100)
@@ -36,7 +36,7 @@ def fEpsilonCo():
         UnivariateSplinePlot(X, Y, x_new, k = 2, save = True)
         x_new = np.linspace(10e-2,60,500)
         pchipPlot(X, Y, x_new, save = True)
-        '''
+        
         
 
     except ValueError:
@@ -95,5 +95,5 @@ def fEpsilon():
         raise    
 
 if __name__ == '__main__':
-    #fEpsilonCo()
-    fEpsilon()
+    fEpsilonCo()
+    #fEpsilon()
