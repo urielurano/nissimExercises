@@ -11,7 +11,7 @@ def fEpsilonCo():
     fEpsilonPhCo = fcon(Ec, r_star, gammac,alphar, thetac)
 
     #Here make the aranges to make the plot
-    for ii in np.arange(-1.0,3.0,0.2):
+    for ii in np.arange(-1.0,3.0,0.2150):
         epsilon = pow(10,ii)
         x.append(epsilon)
         if epsilon < epsilonPhCo:
@@ -24,18 +24,21 @@ def fEpsilonCo():
         Y = np.array(y,float)
 
         #########Call the plots here###########################
-
+        '''
 	x_new = np.linspace(10e-2, 20, 1000)
         interp1dPlot(X, Y, x_new, kind='quadratic', save = True)
-        
         x_new = np.linspace(10e-2,20,100) 
         PchipInterpolatorPlot(X,Y,x_new, save = True)
+       
         x_new = np.linspace(10e-2,20,100)
         rbfplot(X, Y, x_new, function='thin_plate', save = True)
+        '''
         x_new = np.linspace(10e-2,1000,10000)
         UnivariateSplinePlot(X, Y, x_new, k = 2, save = True)
+        '''
         x_new = np.linspace(10e-2,60,500)
         pchipPlot(X, Y, x_new, save = True)
+        '''
         
         
 
