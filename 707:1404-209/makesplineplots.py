@@ -1,8 +1,10 @@
 from math import *
 from scipy.interpolate import interp1d, InterpolatedUnivariateSpline, Rbf,PchipInterpolator, pchip
+from pandas.tools.plotting import andrews_curves
 from scipy.optimize import leastsq
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 
 def interp1dPlot(X, Y, x_new, **args):

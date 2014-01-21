@@ -11,7 +11,11 @@ def fEpsilonCo():
     fEpsilonPhCo = fcon(Ec, r_star, gammac,alphar, thetac)
 
     #Here make the aranges to make the plot
+<<<<<<< HEAD
     for ii in np.arange(-1.0,3.0,0.2150):
+=======
+    for ii in np.arange(-1.0,3.0,0.250):
+>>>>>>> issue3
         epsilon = pow(10,ii)
         x.append(epsilon)
         if epsilon < epsilonPhCo:
@@ -23,6 +27,7 @@ def fEpsilonCo():
         X = np.array(x,float)
         Y = np.array(y,float)
 	#x_new = np.linspace(10e-2, 500, 10e4)
+<<<<<<< HEAD
         #CALL HERE THE PLOTS
         #rbfplot(X, Y, x_new, function='cubic')
         #interp1dPlot(X, Y, x_new, kind='nearest')
@@ -34,6 +39,19 @@ def fEpsilonCo():
         #for x in np.arange(0,10000,1000):
         x_new = np.linspace(10e-2,60,500)
         pchipPlot(X, Y, x_new, save = True)
+=======
+        #CALL HERE THE PLOT
+        #interp1dPlot(X, Y, x_new, kind='nearest')
+        #PchipInterpolatorPlot(X,Y,x_new)
+        '''
+        x_new = np.linspace(10e-2,20,100)
+        rbfplot(X, Y, x_new, function='thin_plate', save = True)
+        x_new = np.linspace(10e-2,1000,10000)
+        UnivariateSplinePlot(X, Y, x_new, k = 2, save = True)
+        x_new = np.linspace(10e-2,60,500)
+        pchipPlot(X, Y, x_new, save = True)
+        '''
+>>>>>>> issue3
         
 
     except ValueError:
