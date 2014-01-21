@@ -187,9 +187,9 @@ def PchipInterpolatorPlot(X,Y,x_new, **args):
             axis = 'axis with value = '+ str(args['axis'])
     else:
         pcp = PchipInterpolator(X,Y) 
-    if('wn' in set3):
+    if('wn' in set2):
         if(type(args['wn']) == int):
-	    title = title+str(args['nw'])
+	    title = title+str(args['wn'])
             plt.figure(title)
         else:
             print 'wn is an integer necessary'
