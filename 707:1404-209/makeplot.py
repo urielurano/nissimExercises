@@ -54,7 +54,7 @@ def fEpsilon():
     epsilonMSC = E_mssc(xiB,Lj, gammaj,dt)
     fEpsilonECSC = opt(Lj, z,gammaj, dt)*Fco(xiB,Lj, gammaj,dt,dz)
 
-    for ii in np.arange(-1.0,3.0,0.1):
+    for ii in np.arange(-1.0,3.0,0.3):
         epsilon = pow(10,ii)
         x.append(epsilon)
         if(epsilon < epsilonASC):
@@ -74,18 +74,26 @@ def fEpsilon():
     try:
         X = np.array(x,float)
         Y = np.array(y,float)
-        x_new = np.linspace(10e-2, (10e3)/15)#check here  || 10e6
+
 	#CALL HERE THE PLOTS
-        UnivariateSplinePlot(X, Y, x_new, k = 5)
-        rbfplot(X, Y, x_new, function='cubic',epsilon=pow(10,-3-1),smooth=pow(10,-3))
-        interp1dPlot(X, Y, x_new, kind='cubic')
-        PchipInterpolatorPlot(X,Y,x_new)
-        pchipPlot(X, Y, x_new)
+        '''
+        x_new = np.linspace(10e-2,100,100)
+        PchipInterpolatorPlot(X,Y,x_new, save = True)
+        x_new = np.linspace(10e-2,100,100)
+        rbfplot(X, Y, x_new, function='quintic', save = True)
+        x_new = np.linspace(10e-2,100,100) 
+        UnivariateSplinePlot(X, Y, x_new, k = 4, save = True)
+        '''
+        x_new = np.linspace(10e-2,100,100)
+        pchipPlot(X, Y, x_new, save = True)
+        
+
+
 
     except ValueError:
         print 'Please check the values of your module by this exception:'
         raise    
 
 if __name__ == '__main__':
-    fEpsilonCo()
-    #fEpsilon()
+    #fEpsilonCo()
+    fEpsilon()
