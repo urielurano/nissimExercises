@@ -79,7 +79,7 @@ def make_plot1():
     xe1 = []
     ye1 = []
 
-    filename1 = "/Users/nifraija/Desktop/2013/recover/FRI/CenA_I/north_lobe/nlob_syn.dat"
+    filename1 = "/home/antonio/nissimExercises/nfit/nlob_syn.dat"
     ifile = open(filename1,"r")
     if ifile:
         for line in ifile:
