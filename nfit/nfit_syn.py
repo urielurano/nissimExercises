@@ -6,12 +6,9 @@ import ROOT as rt
 import numpy as np
 import matplotlib.pyplot as plt
 from sys import *
-
 from pylab import *
 from math import *
-from scipy.interpolate import interp1d
-from scipy.interpolate import pchip
-from scipy import interpolate
+from makesplineplots import *
 
 gROOT.Reset()
 
@@ -43,7 +40,7 @@ def xx(aa,bb, cc):
     E_c=bb*1e-5
     E_m=cc*1e-6
     fl=ax
-    for ii in arange(-6.3, -1.0, 0.22):
+    for ii in arange(-6.3, -1.0, 2):
         Ega0=pow(10,ii)
         Egamma=Ega0
         C1=0
@@ -60,6 +57,29 @@ def xx(aa,bb, cc):
         outspec.write("%E %E\n" %(Ega0,C))   
 
     outspec.close()
+
+
+##################################################################################
+##################### Making the synchrotron plot on matplotlib ##################
+##################################################################################
+
+
+def make_plot():
+    x1 = []
+    y1 = []
+    file_path = "/home/antonio/nissimExercises/nfit/nsyn.dat"
+    rfile = open(file_path, "r")
+    if rfile:
+        for line in rfile:
+            a, b = [float(t) for t in line.split()]
+            x1.append(a)
+            y1.append(b)
+            
+    X = np.array(x1, float)
+    Y = np.array(y1, float)
+    #x_new = np.linspace(10e-7, 10e-1,num = 10e3)#good
+    x_new = np.linspace(10e-7, 10e-1,num = 10e3)
+    UnivariateSplinePlot(X,Y,x_new,k = 2, view = True)
 
 
 
@@ -156,3 +176,4 @@ def make_plot1():
 
 if __name__ == '__main__':
     make_plot1()
+    make_plot()
