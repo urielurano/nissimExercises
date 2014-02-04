@@ -77,7 +77,6 @@ def make_plot():
             
     X = np.array(x1, float)
     Y = np.array(y1, float)
-    #x_new = np.linspace(10e-7, 10e-1,num = 10e3)#good
     x_new = np.linspace(10e-7, 10e-1,num = 10e3)
     UnivariateSplinePlot(X,Y,x_new,k = 2, view = True)
 
@@ -173,7 +172,7 @@ def make_plot1():
         print ('Chi square: %2.3f  NDF:%2.2f') %(fun1.GetChisquare(),fun1.GetNDF())
 
         xx(fun1.GetParameter(0), fun1.GetParameter(1), fun1.GetParameter(2))
+        make_plot()
 
 if __name__ == '__main__':
     make_plot1()
-    make_plot()
