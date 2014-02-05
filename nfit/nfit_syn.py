@@ -40,7 +40,7 @@ def xx(aa,bb, cc):
     E_c=bb*1e-5
     E_m=cc*1e-6
     fl=ax
-    for ii in arange(-6.3, -1.0, 2):
+    for ii in arange(-6.3, -1.0, .9):
         Ega0=pow(10,ii)
         Egamma=Ega0
         C1=0
@@ -77,8 +77,10 @@ def make_plot():
             
     X = np.array(x1, float)
     Y = np.array(y1, float)
-    x_new = np.linspace(10e-7, 10e-1,num = 10e3)
-    UnivariateSplinePlot(X,Y,x_new,k = 2, view = True)
+    x_new = np.linspace(10e-7, 10e-2,num = 10e4)
+    #rbfplot(X,Y,x_new,function='multiquadric',epsilon = 10e-5, view = True)
+    rbfplot(X,Y,x_new,function= 'inverse_multiquadric',epsilon = 10e-4,smooth = 1, view = True)
+    
 
 
 
