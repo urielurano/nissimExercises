@@ -11,13 +11,16 @@ def makeFit(filePath):
     try:
         x1 = []
         y1 = []
+        x1errorV = []
+        y1errorV = []
+        
         rfile = open(filePath, 'r')
         
         if rfile:
             for line in rfile:
                 a, b = [float(t) for t in line.split()]
-                x1.append(a)
-                y1.append(b)
+                print a, x1.append(a)
+                print b, y1.append(b)
             
             ##Now we make the arrays of the points
 
