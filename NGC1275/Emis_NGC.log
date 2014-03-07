@@ -1,0 +1,712 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.5.31)  17 DEC 2013 20:46
+entering extended mode
+ %&-line parsing enabled.
+**Emis_NGC.tex
+(./Emis_NGC.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(./mn2e.cls
+Document Class: mn2e 2001/02/06 v2.2 LaTeX2e MN document class
+Document Style `MN' v2.2, released 2001 February 20
+\math@groups=\toks14
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/cmsy/b/n on input line 223.
+\symbmisymbols=\mathgroup4
+\symUPM=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `UPM' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 260.
+\symAMSa=\mathgroup6
+\SFB@measure=\dimen102
+\realparindent=\skip41
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\@indentskip=\skip42
+\smallindent=\skip43
+\@footindent=\skip44
+\@leftskip=\skip45
+\c@dummy=\count85
+(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
+Package: natbib 2009/07/16 8.31 (PWD, AO)
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count86
+)
+\c@table=\count87
+\c@figure=\count88
+\mathindent=\dimen103
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texmf-texlive/tex/latex/tools/bm.sty
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldUPM=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
+LaTeX Info: Redefining \bm on input line 204.
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks16
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 49.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 49.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 49.
+\symAMSb=\mathgroup11
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 96.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 103.
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/ulem.sty
+\UL@box=\box26
+\UL@hyphenbox=\box27
+\UL@skip=\skip48
+\UL@hook=\toks17
+\UL@pe=\count90
+\UL@pixel=\dimen106
+\ULC@box=\box28
+Package: ulem 2000/05/26
+\ULdepth=\dimen107
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen108
+\epsfysize=\dimen109
+)
+(/usr/share/texmf-texlive/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count91
+\pfg@scount=\count92
+\pfg@temp=\write3
+)
+
+LaTeX Warning: Unused global option(s):
+    [a4].
+
+(./Emis_NGC.aux
+
+LaTeX Warning: Label `espsyn' multiply defined.
+
+)
+\openout1 = `Emis_NGC.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 116.
+
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count93
+\scratchdimen=\dimen110
+\scratchbox=\box29
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count96
+\MPscratchDim=\dimen111
+\MPnumerator=\count97
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
+LaTeX Font Info:    Try loading font information for U+eur on input line 153.
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/ueur.fd
+File: ueur.fd 2009/06/22 v3.00 Euler Roman
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 153.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 153.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 161.
+
+
+Package natbib Warning: Citation `ver94' on page 1 undefined on input line 177.
+
+
+
+Package natbib Warning: Citation `tay06' on page 1 undefined on input line 177.
+
+
+
+Package natbib Warning: Citation `wal00' on page 1 undefined on input line 177.
+
+
+
+Package natbib Warning: Citation `asa06' on page 1 undefined on input line 177.
+
+
+
+Package natbib Warning: Citation `kel04' on page 1 undefined on input line 178.
+
+
+
+Package natbib Warning: Citation `lis09' on page 1 undefined on input line 178.
+
+
+
+Package natbib Warning: Citation `tay06' on page 1 undefined on input line 178.
+
+
+
+Package natbib Warning: Citation `abd09a' on page 1 undefined on input line 178
+.
+
+
+Package natbib Warning: Citation `ped90' on page 1 undefined on input line 179.
+
+
+
+Package natbib Warning: Citation `pfr04' on page 1 undefined on input line 179.
+
+
+
+Package natbib Warning: Citation `ale10' on page 1 undefined on input line 179.
+
+
+
+Package natbib Warning: Citation `ale12' on page 1 undefined on input line 179.
+
+
+
+Package natbib Warning: Citation `gop10' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `rie09' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `kac09a' on page 1 undefined on input line 187
+.
+
+
+Package natbib Warning: Citation `kac09b' on page 1 undefined on input line 187
+.
+
+
+Package natbib Warning: Citation `rom96' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `iso02' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `hon09' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `abd10' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `der09' on page 1 undefined on input line 187.
+
+
+
+Package natbib Warning: Citation `yam07' on page 1 undefined on input line 189.
+
+
+
+Package natbib Warning: Citation `abr08' on page 1 undefined on input line 189.
+
+
+
+Package natbib Warning: Citation `ung07' on page 1 undefined on input line 189.
+
+
+
+Package natbib Warning: Citation `ung07' on page 1 undefined on input line 189.
+
+
+
+Package natbib Warning: Citation `eng07' on page 1 undefined on input line 189.
+
+
+
+Package natbib Warning: Citation `abr07' on page 1 undefined on input line 189.
+
+
+
+Package natbib Warning: Citation `abr08' on page 1 undefined on input line 189.
+
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 189--190
+[]\OT1/ptm/m/n/9 Pierre Auger Ob-ser-va-tory (PAO) stud-ied the spec-tra of
+ []
+
+
+Package natbib Warning: Citation `blo96' on page 1 undefined on input line 193.
+
+
+
+Package natbib Warning: Citation `tav98' on page 1 undefined on input line 193.
+
+
+
+Package natbib Warning: Citation `abd10' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `chi01' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `len08' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `ore09' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `har09' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `der09' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `gup08' on page 1 undefined on input line 194.
+
+
+
+Package natbib Warning: Citation `bec09' on page 1 undefined on input line 194.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 195.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 195.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
+ [1
+Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+Package natbib Warning: Citation `1994hea2.book.....L' on page 2 undefined on i
+nput line 212.
+
+
+Package natbib Warning: Citation `2001MNRAS.326.1499H' on page 2 undefined on i
+nput line 212.
+
+
+Package natbib Warning: Citation `2006MNRAS.368L..15H' on page 2 undefined on i
+nput line 212.
+
+
+Package natbib Warning: Citation `2011MNRAS.415..133H' on page 2 undefined on i
+nput line 212.
+
+
+Package natbib Warning: Citation `1998A&ARv...8..237I' on page 2 undefined on i
+nput line 231.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 231.
+
+
+Package natbib Warning: Citation `1994hea2.book.....L' on page 2 undefined on i
+nput line 244.
+
+
+Package natbib Warning: Citation `1986rpa..book.....R' on page 2 undefined on i
+nput line 244.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 244.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 244.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.255 
+      
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.255 
+      
+? 
+
+Overfull \hbox (10.01884pt too wide) detected at line 255
+$ []\OML/cmm/m/it/9 ^^O[]N[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 ^^O[]\OT1/cmr/m/n/9
+ ) = \OML/cmm/m/it/9 A[] [] [] []$
+ []
+
+
+Overfull \hbox (24.4794pt too wide) in paragraph at lines 247--259
+[][]$\OML/cmm/m/it/9 ^^O[] <
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--259
+
+ []
+
+! Extra }, or forgotten $.
+\endequation ...width \linewidth \@eqnnum \egroup 
+                                                  \endtrivlist 
+l.260 \end{equation}
+                    
+? 
+
+! LaTeX Error: Command \end{equation} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.260 \end{equation}
+                    
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.260 \end{equation}
+                    
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.260 \end{equation}
+                    
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.260 \end{equation}
+                    
+? 
+
+Overfull \hbox (45.67754pt too wide) detected at line 266
+$ []\OML/cmm/m/it/9 A[] \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 ^^O[] \OMS/cmsy/m/n
+/9 ' []\OT1/cmr/m/n/9 (1 + \OML/cmm/m/it/9 z\OT1/cmr/m/n/9 )[] \OML/cmm/m/it/9 
+^^N[] U[] U[] N[] r[]$ \OT1/ptm/m/n/9 (6)
+ []
+
+
+Overfull \hbox (125.6356pt too wide) detected at line 281
+$ []\OML/cmm/m/it/9 ^^O[]N[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 ^^O[]\OT1/cmr/m/n/9
+ ) = \OML/cmm/m/it/9 A[] []$ \OT1/ptm/m/n/9 (7)
+ []
+
+
+Package natbib Warning: Citation `oli00' on page 2 undefined on input line 288.
+
+
+
+Package natbib Warning: Citation `bha00' on page 2 undefined on input line 288.
+
+
+
+Package natbib Warning: Citation `sta04' on page 2 undefined on input line 288.
+
+
+
+Package natbib Warning: Citation `cha09b' on page 2 undefined on input line 288
+.
+
+
+Package natbib Warning: Citation `gup08' on page 2 undefined on input line 288.
+
+
+
+Package natbib Warning: Citation `ste68' on page 2 undefined on input line 294.
+
+
+
+Package natbib Warning: Citation `ber90' on page 2 undefined on input line 294.
+
+
+
+Package natbib Warning: Citation `bec09' on page 2 undefined on input line 294.
+
+
+
+Package natbib Warning: Citation `ato03' on page 2 undefined on input line 294.
+
+
+
+Package natbib Warning: Citation `cha09b' on page 2 undefined on input line 294
+.
+
+
+Package natbib Warning: Citation `ato03' on page 2 undefined on input line 299.
+
+
+[2]
+
+Package natbib Warning: Citation `bat03' on page 3 undefined on input line 302.
+
+
+
+Package natbib Warning: Citation `bec09' on page 3 undefined on input line 302.
+
+
+
+Overfull \hbox (85.53235pt too wide) detected at line 312
+$ \OML/cmm/m/it/9 ^^\[] \OMS/cmsy/m/n/9 ^^Y  \OT1/cmr/m/n/9 ^^@[] [][][] [][][]
+ [][][] [][][][] [][][][] \OML/cmm/m/it/9 :$ \OT1/ptm/m/n/9 (10)
+ []
+
+
+Package natbib Warning: Citation `ste68' on page 3 undefined on input line 315.
+
+
+
+Package natbib Warning: Citation `ber90' on page 3 undefined on input line 315.
+
+
+
+Overfull \hbox (69.65126pt too wide) detected at line 337
+$ []\OML/cmm/m/it/9 f[] \OMS/cmsy/m/n/9 ^^Y []\OML/cmm/m/it/9 ^^[[] ^^X\OT1/cmr
+/m/n/9 ([]) [] []$ \OT1/ptm/m/n/9 (12)
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 342--344
+\OT1/ptm/m/n/9 pro-duced by p$\OML/cmm/m/it/9 ^^M$ \OT1/ptm/m/n/9 in-ter-ac-tio
+n is re-lated to the frac-tion of en-
+ []
+
+
+Overfull \hbox (54.54031pt too wide) detected at line 352
+$ [][][] \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 A[] []$ \OT1/ptm/m/n/9 (13)
+ []
+
+
+Overfull \hbox (214.07011pt too wide) detected at line 357
+$ \OML/cmm/m/it/9 A[] \OT1/cmr/m/n/9 = 2\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 25 \OMS
+/cmsy/m/n/9 ^^B \OT1/cmr/m/n/9 10[][] [][][][] [][][] [][][] [][][][]$ \OT1/ptm
+/m/n/9 (14)
+ []
+
+
+Package natbib Warning: Citation `ato03' on page 3 undefined on input line 371.
+
+
+
+Package natbib Warning: Citation `gup08' on page 3 undefined on input line 389.
+
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 388--390
+\OT1/ptm/m/n/9 pro-duced by pp in-ter-ac-tion is re-lated to the frac-tion of e
+n-
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 388--390
+\OT1/ptm/m/n/9 ergy lost through the equa-tion: $\OML/cmm/m/it/9 f[]\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 E[]\OT1/cmr/m/n/9 ) \OML/cmm/m/it/9 E[] \OT1/cmr/m/n/9 ([]
+) \OML/cmm/m/it/9 dE[] \OT1/cmr/m/n/9 =
+ []
+
+
+Overfull \hbox (102.1014pt too wide) detected at line 399
+$ \OML/cmm/m/it/9 A[] \OT1/cmr/m/n/9 = 9\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 97 \OMS
+/cmsy/m/n/9 ^^B \OT1/cmr/m/n/9 10[][] \OML/cmm/m/it/9 R[] n[] [][][][] [][][][]
+$ \OT1/ptm/m/n/9 (19)
+ []
+
+[3]
+No file Emis_NGC.bbl.
+[4
+
+] <NGC1275pgamma.pdf, id=31, 569.12625pt x 318.18875pt>
+File: NGC1275pgamma.pdf Graphic file (type pdf)
+
+<use NGC1275pgamma.pdf>
+Overfull \hbox (112.79846pt too wide) in paragraph at lines 436--440
+ [] 
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 442--442
+[]\OT1/ptm/b/n/8 Figure 1. \OT1/ptm/m/n/8 Fit-ting of ob-served spec-tral en-er
+gy dis-tri-bu-tion (SED) of
+ []
+
+<NGC1275pp.pdf, id=32, 569.12625pt x 318.18875pt>
+File: NGC1275pp.pdf Graphic file (type pdf)
+ <use NGC1275pp.pdf>
+Overfull \hbox (112.79846pt too wide) in paragraph at lines 445--449
+ [] 
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 451--451
+[]\OT1/ptm/b/n/8 Figure 2. \OT1/ptm/m/n/8 Fit-ting of ob-served spec-tral en-er
+gy dis-tri-bu-tion (SED) of
+ []
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.465 ...raphics[width=0.7\textwidth]{NGC1275.eps}
+                                                  \\
+? 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+
+ <./NGC1275pgamma.pdf, page is rotated 90 degrees> <./NGC1275pp.pdf, page is ro
+tated 90 degrees>]
+
+LaTeX Warning: Reference `App' on page 6 undefined on input line 512.
+
+
+Overfull \hbox (11.70116pt too wide) in paragraph at lines 522--534
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 537.
+
+Overfull \hbox (16.58527pt too wide) detected at line 551
+$ []\OML/cmm/m/it/8 ^^O[]N[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 ^^O[]\OT1/cmr/m/n/8
+ ) = [0] []$ \OT1/ptm/m/n/8 (A2)
+ []
+
+
+Overfull \hbox (11.70116pt too wide) in paragraph at lines 557--569
+ [] 
+ []
+
+
+Package natbib Warning: There were undefined citations.
+
+[6
+
+
+] (./Emis_NGC.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2313 strings out of 495061
+ 26078 string characters out of 1182621
+ 94603 words of memory out of 3000000
+ 5441 multiletter control sequences out of 15000+50000
+ 44188 words of font info for 111 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 31i,14n,34p,1226b,302s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.p
+fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Emis_NGC.pdf (6 pages, 295929 bytes).
+PDF statistics:
+ 188 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+

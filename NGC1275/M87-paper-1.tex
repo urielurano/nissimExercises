@@ -1,0 +1,489 @@
+%% ****** Start of file apsguide4-1.tex ****** %
+%%
+%%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%%   Version 4.1r of REVTeX, August 2010.
+%%
+%%   Copyright (c) 2009, 2010 The American Physical Society.
+%%
+%%   See the REVTeX 4.1 README file for restrictions and more information.
+%%
+
+
+\documentclass[preprint, twocolumn,secnumarabic,amssymb, nobibnotes, aps, prd]{revtex4-1}
+%\usepackage{acrofont}%NOTE: Comment out this line for the release version!
+
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{ulem}
+\newcommand{\revtex}{REV\TeX\ }
+\newcommand{\classoption}[1]{\texttt{#1}}
+\newcommand{\macro}[1]{\texttt{\textbackslash#1}}
+\newcommand{\m}[1]{\macro{#1}}
+\newcommand{\env}[1]{\texttt{#1}}
+\setlength{\textheight}{9.5in}
+
+
+% Bibliography and bibfile
+\def\aj{AJ}%% Astronomical Journal
+\def\actaa{Acta Astron.}%% Acta Astronomica
+\def\araa{ARA\&A}%% Annual Review of Astron and Astrophys
+\def\apj{ApJ}%% Astrophysical Journal
+\def\apjl{ApJ}%% Astrophysical Journal, Letters
+\def\apjs{ApJS}%% Astrophysical Journal, Supplement
+\def\ao{Appl.~Opt.}%% Applied Optics
+\def\apss{Ap\&SS}%% Astrophysics and Space Science
+\def\aap{A\&A}%% Astronomy and Astrophysics
+\def\aapr{A\&A~Rev.}%% Astronomy and Astrophysics Reviews
+\def\aaps{A\&AS}%% Astronomy and Astrophysics, Supplement
+\def\azh{AZh}%% Astronomicheskii Zhurnal
+\def\baas{BAAS}%% Bulletin of the AAS
+\def\bac{Bull. astr. Inst. Czechosl.}%% Bulletin of the Astronomical Institutes of Czechoslovakia
+\def\caa{Chinese Astron. Astrophys.}%% Chinese Astronomy and Astrophysics
+\def\cjaa{Chinese J. Astron. Astrophys.}%% Chinese Journal of Astronomy and Astrophysics
+\def\icarus{Icarus}%% Icarus
+\def\jcap{J. Cosmology Astropart. Phys.}%% Journal of Cosmology and Astroparticle Physics
+\def\jrasc{JRASC}%% Journal of the RAS of Canada
+\def\mnras{MNRAS}%% Monthly Notices of the RAS
+\def\memras{MmRAS}%% Memoirs of the RAS
+\def\na{New A}%% New Astronomy
+\def\nar{New A Rev.}%% New Astronomy Review
+\def\pasa{PASA}%% Publications of the Astron. Soc. of Australia
+\def\pra{Phys.~Rev.~A}%% Physical Review A: General Physics
+\def\prb{Phys.~Rev.~B}%% Physical Review B: Solid State
+\def\prc{Phys.~Rev.~C}%% Physical Review C
+\def\prd{Phys.~Rev.~D}%% Physical Review D
+\def\pre{Phys.~Rev.~E}%% Physical Review E
+\def\prl{Phys.~Rev.~Lett.}%% Physical Review Letters
+\def\pasp{PASP}%% Publications of the ASP
+\def\pasj{PASJ}%% Publications of the ASJ
+\def\qjras{QJRAS}%% Quarterly Journal of the RAS
+\def\rmxaa{Rev. Mexicana Astron. Astrofis.}%% Revista Mexicana de Astronomia y Astrofisica
+\def\skytel{S\&T}%% Sky and Telescope
+\def\solphys{Sol.~Phys.}%% Solar Physics
+\def\sovast{Soviet~Ast.}%% Soviet Astronomy
+\def\ssr{Space~Sci.~Rev.}%% Space Science Reviews
+\def\zap{ZAp}%% Zeitschrift fuer Astrophysik
+\def\nat{Nature}%% Nature
+\def\iaucirc{IAU~Circ.}%% IAU Circulars
+\def\aplett{Astrophys.~Lett.}%% Astrophysics Letters
+\def\apspr{Astrophys.~Space~Phys.~Res.}%% Astrophysics Space Physics Research
+\def\bain{Bull.~Astron.~Inst.~Netherlands}%% Bulletin Astronomical Institute of the Netherlands
+\def\fcp{Fund.~Cosmic~Phys.}%% Fundamental Cosmic Physics
+\def\gca{Geochim.~Cosmochim.~Acta}%% Geochimica Cosmochimica Acta
+\def\grl{Geophys.~Res.~Lett.}%% Geophysics Research Letters
+\def\jcp{J.~Chem.~Phys.}%% Journal of Chemical Physics
+\def\jgr{J.~Geophys.~Res.}%% Journal of Geophysics Research
+\def\jqsrt{J.~Quant.~Spec.~Radiat.~Transf.}%% Journal of Quantitiative Spectroscopy and Radiative Trasfer
+\def\memsai{Mem.~Soc.~Astron.~Italiana}%% Mem. Societa Astronomica Italiana
+\def\nphysa{Nucl.~Phys.~A}%% Nuclear Physics A
+\def\physrep{Phys.~Rep.}%% Physics Reports
+\def\physscr{Phys.~Scr}%% Physica Scripta
+\def\planss{Planet.~Space~Sci.}%% Planetary Space Science
+\def\procspie{Proc.~SPIE}%% Proceedings of the SPIE
+\let\astap=\aap
+\let\apjlett=\apjl
+\let\apjsupp=\apjs
+\let\applopt=\ao
+%
+
+
+%---------------------------------------------------------------------
+
+
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bary}{\begin{eqnarray}}
+\newcommand{\eary}{\end{eqnarray}}
+
+
+
+
+
+\begin{document}
+\title{Could we observe Ultra High Energy Cosmic Rays from  M87?}%
+
+\author{N. Fraija,  A. Marinelli}%
+\email{nifraija@astro.unam.mx,\\antonio.marinelli@fisica.unam.mx}
+\affiliation{Instituto de Astronom\' ia, Universidad Nacional Aut\'onoma de M\'exico, Circuito Exterior, C.U., A. Postal 70-264, 04510 M\'exico D.F., M\'exico}
+\affiliation{Instituto de F\' isica, Universidad Nacional Aut\'onoma de M\'exico, Circuito Exterior, C.U., A. Postal 70-264, 04510 M\'exico D.F., M\'exico}
+%\date{August 10, 2010}
+
+\begin{abstract}
+We present a hadronic model to describe the TeV photons as the neutral pion decay resulting from p$\gamma$ and $pp$ interactions. For the p$\gamma$ interaction, we  assume that the seed photons  are  around  at the second SED peak. For the pp interaction we consider as target protons those located inside  the  lobes.  We show that this model can describe the TeV spectra of the  M87.  On the other, HiRes has associated many events with energies greater than 10, 40 and 57 EeV of the Northern hemisphere.  Requiring a satisfactory description of the spectra at very high energies with p$\gamma$ interaction we obtain  XXXXXXXXXXXX. However, when considering  pp interaction to describe the $\gamma$-spectrum,  we obtain XX.
+\end{abstract}
+
+\maketitle
+
+
+%PACS numbers may be entered using the \verb+\pacs{#1}+ command.
+
+
+
+%\tableofcontents
+
+\section{Introduction}
+
+The nearby radio galaxy M87 is located in the Virgo cluster of galaxies at a distance of $\sim$ 16 Mpc (z=0.0043) and hosts a central black hole of (3.2 $\pm$0.9) $\times$ 10$^9$ solar masses.  As one of the nearest radio galaxies to us, M87  is among the best-studied of its source class. It has been detected at energy ranges from radio to VHE gamma rays.  At high energy $\gamma-$rays  (20 MeV - 100 GeV), M87 has been  detected by Large Area Telescope (LAT) aboard the launched Fermi Gamma-ray Space Telescope \cite{2009ApJ...707...55A} with a faint flux of 2.45 ($\pm0.63$)  $\times$ 10$^{-8}$ photons cm$^{-2}$ s$^{-1}$, and  no evidence in the  variability of the MeV-GeV energy range. At higher energies, M87 is regularly detected by HESS, MAGIC and VERITAS with variable TeV emission  on timescales of years and flaring in a few days \cite{2012ApJ...746..151A, 2010ApJ...716..819A, 2006Sci...314.1424A}. At radio wavelengths M87 has a hierarchical morphology, with inner lobes at a nuclear distance $\sim$2.5 kpc ($\sim$30"), intermediate ridges at a nuclear distance  $\sim$15 kpc ($\sim$3"), and an outer diffuse  "halo" at a nuclear distance $\sim$40 kpc ($\sim$8").   The two inner radio lobes correspond to depressions in the X-ray surface brightness. Such a phenomenon has been seen in other clusters, such as Hydra A \cite{mcn00} and  Perseus \cite{fab00}, although on much larger spatial scales.  Some knots in the emission-line and X-ray gas are associated with each other, especially on the norther and external boundaries of the inner eastern radio lobe.  In addition, two collimated flows emerge from the inner region, one directed almost exactly eastward and the other directed slightly north of west. The initial direction of the westward flow is roughly aligned with the direction of the inner jet, although the flow quickly bends and twists once it leaves the inner region.  The flow appears to consist of a mass of bright, curved structure, which we call filaments.  The eastern flow ends in a well-defined pair of edge-brightened circular lobes.  This ear-shape  structure is reminiscent of a subsonic vortex ring.  The western flow develops a gradual but well-defined southward twist, starting only a few kiloparsecs in the intermediate ridges. Finally, both flows are immersed in a larger structure that might be described as two overlapping "bubbles", each extending about 40 kpc.  The coherent flows appear to be continuos from the point at which they emerge from the inner lobes to the outer edge of the radio halo.  After reaching the halo, the flows gradually disperse, the westward flow particularly, and appear to be filling the entire halo with radio-loud, filamented plasma \cite{you02}. The  SED  for M87 was reconstructed using historical radio to X-ray fluxes  \citep{spa96, tan08}, Chandra and VLBA measurements \citep{bir91, des96} and the  LAT $\gamma$-ray spectrum \citep{2009ApJ...707...55A}. This SED from radio to MeV/GeV $\gamma$-ray was fit with a homogeneous one-zone SSC jet model \citep{fin08}. The VERITAS observations in 2008 resulted in 450 excess events, corresponding to a statistical significance of $7.2\,\sigma$.  The average flux above 250\,GeV is $(2.74 \pm 0.61) \times 10^{-12} \rm{\,cm}^{-2} \rm{\,s}^{-1}$, corresponding to $1.8\%$ of the Crab Nebula flux.  The differential energy spectrum of M\,87 measured by VERITAS in 2008 is consistent with a power-law distribution $dN/dE = \Phi_0(E/\rm{TeV})^{-\Gamma}$, with $\Phi_0=(5.17 \pm 0.91_{stat} \pm 1.03_{syst}) \times 10^{-13} \rm{\,cm}^{-2} \rm{\,s}^{-1} \rm{\,TeV}^{-1}$ and $\Gamma=2.49 \pm 0.19_{stat} \pm 0.20_{syst}$ \cite{2010ApJ...716..819A}. 
+
+
+
+
+Also M87 was monitored for 150 hours by MAGIC between 2005 and 2007. A spectrum described by a simple power law with a photon index $\Gamma=2.21\pm0.21$ and a flux normalization at 300 GeV of ($7.7\pm1.3)\times 10^{-8} TeV^{-1}\, s^{-1} m^{-2}$) between (0.1 - 2) TeV was reported \citep{2012A&A...544A..96A}.  
+
+A strong flaring state was observed by MAGIC a power law with a photon index of $2.30\pm 0.11_{stat}\pm0.20_{sys}$    and a flux normalization at 1 TeV of  ($2.89\pm0.37)\times 10^{-12} TeV^{-1}\, s^{-1} cm^{-2}$) between (0.1 - 10) TeV \citep{2008ApJ...685L..23A}.
+
+
+M87 was observed at GeV/TeV $\gamma$-ray energies with H.E.S.S. (High Energy Stereoscopic System) Cherenkov telescopes in the years 2003-2006.
+
+
+It has been proposed that astrophysical sources accelerating ultra high energy cosmic rays (UHECRs)  could also produce high energy $\gamma$-rays by proton interactions with photons at the source and/or the surrounding radiation and matter.  Hence, VHE photons detected from M87 could be the result of hadronic interactions of cosmic rays accelerated by the jet with photons radiated inside the jet  or protons in the lobes \citep{gop10, rie09, kac09a, kac09b, rom96, iso02, hon09, abd10, der09}.
+
+The High Resolution Fly's Eye experiment located in the desert of Utah observes ultra-high energy cosmic rays indirectly using the fluorescence technique \citep{abb07,abb10}.  The HiRes experiment was aimed at  measuring the arrival directions, composition, and the flux  of the most energetic cosmic rays.
+The HiRes experiment  operated in the stereo mode between 1999 December and 2006 April.  At the highest energies, as shown  in  \citep{abb10}. HiRes has the largest data set in the Northern hemisphere: 309 events with $E\geq10$ EeV, 27 events with  $E\geq40$ EeV and 10 events with $E\geq57$.
+
+
+ In this work we use the fact  that leptonic processes are insufficient to explain the entire spectrum of M87, and introduce hadronic processes that may leave a signature in the number of UHECRs and high energy neutrinos observed on Earth.  Our contribution is to describe jointly the TeV energy of M87 as well as the possible  number of UHECR and neutrinos. We first require a description of the SED up to the highest energies obtaining parameters as:  proton spectral index ($\alpha_p$),  proton proportionality constant ($A_p$) and  the normalization energy ($E_0$). Then, we use these parameters to estimate the expected UHECRs and neutrinos observed on Earth. The main assumption here, is the continuation of the proton spectrum to ultra high energies. 
+
+\section{UHECRs from M87}
+
+The High Resolution Fly's Eye experiment located in the desert of Utah determines the arrival direction and energies of  UHECRs  using  the fluorescence technique \citep{abb07,abb10}.  HiRes operated   two fluorescence detectors located atop desert mountains. The survey consisted of events observed by both detectors in the stereo mode. In this mode, the angular resolution in cosmic rays'  pointing directions is about 0.8$^\circ$ and the energy resolution was about 10\%.  The HiRes experiment operated in the stereo mode between 1999 December and 2006 April and had an energy threshold close to 10$^{18}$ eV.
+The HiRes stereo aperture varies very rapidly below 3$\times$ 10$^{18}$ eV, then flattens out and saturates at near 10$^4$ km$^2$ sr at the high energies.  The corrected exposure for a point source is given by $\Xi\,t_{op}\, \omega(\delta_s)/\Omega_{60}$, where $\Xi\,t_{op}\sim(\frac{19}{3})\,10^4\,\rm km^2\,yr$, $t_{op} $ is the total operational time,  $\omega(\delta_s)\simeq 0.45$ is an exposure correction factor for the declination of M87, and $\Omega \simeq\pi$ is the HiRes acceptance solid angle. For a proton power law with spectral index $\alpha_p$ and proportionality constant $A_p$, the expected number of UHECRs from M87 observed by HiRes at particular energy, $\rm E_{obs}$, is given by,
+
+\bary
+N_{\tiny UHECR}=\frac{\Xi\,t_{op}\, \omega(\delta_s)}{(\alpha_p-1)\,\Omega}\,A_p\,E_0\,\left(\frac{E_{obs}}{E_0}\right)^{-\alpha_p+1}
+\eary
+
+\noindent where $E_0$ is the normalization energy. In other words, the expected number of UHECRs  depends on the proton spectrum parameters. If we assume that protons at lower energies have hadronic interactions responsible to reproduced the observed gamma-ray spectra at very high energies then, we can estimate these parameters.
+
+
+\section{Hadronic Interactions}
+
+Some authors \citep{oli00,bha00,sta04} have considered different mechanisms where protons up to ultra high energies can be accelerated. Supposing a power law injection spectrum,
+
+\be\label{spepr}
+\frac{dN_p}{dE_p}=A_p\,E_p^{-\alpha_p}
+\ee
+
+\noindent where $\alpha_p$ is the proton spectral index and $A_p$ is the proportionality constant.   Energetic protons in the jet mainly lose energy   by p$\gamma$  and pp interactions  \citep{ber90,bec09,ato03}; as described  in the following subsections. 
+ 
+
+\subsection{p$\gamma$ interaction}
+
+ The p$\gamma$; interaction takes place when accelerated protons collide with  target photons.  The single-pion production channels are $p+\gamma\to n+\pi^+$ and $p+\gamma\to p+ \pi^0$, where the relevant pion decay chains are $\pi^0\to 2\gamma$, $\pi^+\to \mu^++\nu_\mu\to e^++\nu_e+\bar{\nu}_\mu+\nu_\mu$ and $\pi^-\to \mu^-+\bar{\nu}_\mu\to e^-+\bar{\nu}_e+\nu_\mu+\bar{\nu}_\mu$ \citep{ato03}.
+
+
+In this analysis we suppose  that protons interact with SSC photons ($\sim$ MeV) in the same knot. If so, the optical depth is given as $\tau_{p,ssc}, r_d\,\theta_{jet}\,\Gamma\, n^{obs}_{\gamma ssc} \sigma_{p\gamma}$, where  $r_d$ is the value of the dissipation radius \citep{bat03}, $\theta_{jet}$ is the jet aperture angle, $\sigma_{p\gamma}=0.9$ mbarn is the cross section  for the production of the delta-resonance in proton-photon interactions and  $n^{obs}_{\gamma ssc}$ is the particle density of SSC photons  into the observer frame \citep{bec09} given by,
+
+\be
+n^{obs}_{\gamma ssc}=\frac{\epsilon_{knot}\, L^{obs}}{4\pi\,r^2_d\,E^{obs}_{\gamma,c}}
+\ee
+Assuming that the luminosity of a knot along the jet is a fraction $\epsilon_{knot}=0.1$ of the observed luminosity $L^{obs}=\,erg\,s^{-1}$ for $E^{obs}_{\gamma,c}$ keV, the optical depth is,
+%\begin{widetext}
+\be
+\tau_{p,ssc}\sim\,\Gamma^{-1}\,\theta_{\rm{jet}}\,\epsilon_{\rm{knot}}\,L^{obs} \, r_d^{-1}\, {E^{obs}_{\gamma,b}}^{-1}\,
+\ee
+%\end{widetext}
+The energy lost rate due to pion production is \citep{ste68, ber90},
+\begin{equation}
+t'_{p,\gamma}=\frac{1}{2\,\gamma_p}\int^\infty_{\epsilon_0}\,d\epsilon\,\delta_\pi(\epsilon)\xi(\epsilon)\,\epsilon\int^\infty_{\epsilon/2\gamma_p}dx\, x^{-2}\,n(x)
+\end{equation}
+
+\indent where $n(x)=dn_\gamma/d\epsilon_\gamma (\epsilon_\gamma=x)$, $\sigma_\pi(\epsilon)$ is the cross section of pion production for a photon with energy $\epsilon$ in the proton rest frame, $\xi(\epsilon)$ is the average fraction of energy transferred to the pion,  and $\epsilon_0=0.15$ is the threshold energy, $\gamma_p=\epsilon_p/m^2_p$. The rate of energy loss,  $t'_{p,\gamma}$, $f_{\pi^0,p \gamma}$ and $t'_d/t'_{p,\gamma}$  (where $t'_d\sim r_d/\Gamma$ is the expansion time scale) can  be calculated by following Waxman \& Bahcall 1997 formalism.
+
+%\begin{widetext}
+\begin{eqnarray}
+f_{\pi^0, p \gamma}&=& \frac{(1+z)^2\,L^{obs}}{8\,\pi\,\Gamma^2\,\delta^2_D\,dt^{obs}\,E^{obs}_{\gamma,b}}\,\sigma_{\epsilon_{peak}}\,\xi({\epsilon_{peak}})\cr
+&&\times\frac{\Delta\epsilon_{peak} }{\epsilon_{peak}}
+\cases{
+\frac{E^{obs}_p}{E^{obs}_{p,b}}       &  $E^{obs}_{p} < E^{obs}_{p,b}$ \cr
+1                                                             &  $E^{obs}_{p} \geq E^{obs}_{p,b}$\cr
+}
+\end{eqnarray}
+%\end{widetext}
+
+Here, $\sigma_{peak} =5\times\,10^{-28}$ cm$^2$ and $\xi({\epsilon_{peak}})= 0.2$ are the values of $\sigma$ and $\xi$ at $E_\gamma =\epsilon_{peak}$ and $\Delta\epsilon_{peak} = 0.2$ GeV is the peak width.  
+
+The differential spectrum, $dN_\gamma/dE_\gamma$ of the photon-pions produced by  p$\gamma$ interaction  is related to the fraction of 
+energy lost through  the equation: $f_{\pi^0}(E_p)\,E_p\,dN_p/dE_p\,dE_p=E_\gamma\,dN_\gamma/dE_\gamma\,dE_\gamma $.  If we take into account  that $\pi^0$ typically carries $20\%$ of the proton's energy and that each produced photon shares the same energy then, we obtain the observed gamma  spectrum through  the  following relationship,
+\begin{widetext}
+\begin{equation}
+\label{pgamma}
+\left(E^2\,\frac{dN}{dE}\right)^{obs}_{\pi^0-p\gamma} = A_{p,\gamma}
+\cases{
+\left(\frac{E^{obs}_{\gamma}}{E_{0}}\right)^{-1} \left(\frac{E^{obs}_{\gamma,c}}{E_{0}}\right)^{-\alpha_p+3}          &   $E^{obs}_{\gamma} < E^{obs}_{\pi^0-\gamma,c}$\cr
+\left(\frac{E^{obs}_{\gamma}}{E_{0}}\right)^{-\alpha_p+2}                                                                                        &   $E^{obs}_{\pi^0-\gamma,c} < E^{obs}_{\gamma}$\cr
+}
+\end{equation}
+\end{widetext}
+\noindent where
+%\begin{widetext}
+\be
+A_{p\gamma}=\frac{\delta_D^{\alpha_p} \,E_0^2\,A_p\,(11.1)^{2-\alpha_p} }{d_z^2\,(1+z)^\alpha} \,{E^{obs}_{\gamma,c}}^{-1}\,L^{obs}\,dt^{obs}
+\ee
+%\end{widetext}
+\noindent and
+\be
+E^{obs}_{\pi^0-\gamma,c}=\,\rm{GeV} \frac{\delta_D^2}{(1+z)^2} \biggl(\frac{E^{obs}_{\gamma,b}}{\,\rm{keV}}\biggr)^{-1}
+\ee
+The eq.  \ref{pgamma} could represent the VHE photon contribution  to the spectrum. 
+
+
+\subsection{PP interaction}
+
+Hardcastle et al. 2009 argues that the number density of thermal particles within the giants lobes is $n_p\sim 10^{-4}\,cm^{-3}$. If we assume that  the accelerated protons collide with this thermal particle target then, the energy lost rate due to pion production is given by \citep{ato03},
+\begin{equation}
+t'_{pp}=(n'_p\,k_{pp}\,\sigma_{pp})^{-1}
+\end{equation}
+\noindent where $\sigma_{pp}=30$ mbarn is the nuclear interaction cross section, $k_{pp}=0.5$ is the inelasticity coeficient and $n'_p$ is the comoving thermal particle density.  The fraction of energy lost by pp is  $f_{\pi^0,pp}=t'_d/t'_{pp}$ then,
+
+
+\begin{equation}
+f_{\pi^0 ,pp}=R\,n'_p\,k_{pp}\,\sigma_{pp}
+\end{equation}
+
+\noindent where R is the distance to the lobes from the AGN core.
+
+The differential spectrum, $dN_\gamma/dE_\gamma$ of the photon-pions produced by  pp interaction  is related to the fraction of energy lost through the
+equation:  $f_{\pi^0 , pp}(E_p)\,E_p\,(\frac{dN_p}{dE_p})\,dE_p=E_\gamma\,(\frac{dN_\gamma}{dE_\gamma})\,dE_\gamma$. Taking into account that  photon carries 18$\%$ of the proton energy,  we have that the observed pp spectrum is given by \citep{gup08},
+
+\begin{equation}
+\label{pp}
+\left(E^{2}\, \frac{dN}{dE}\right)^{obs}_{\pi^0 - pp}= A_{pp}\, \left(\frac{E^{obs}_{\gamma}}{E_{0}}\right)^{2-\alpha_p}
+\end{equation}
+where,
+
+
+\be
+A_{pp}= \frac{\Gamma^2\,\delta_D^2\,E_0^2\,A_p}{d_z^2\,(1+z)^2}\, R\,n'_p\,{dt^{obs}}^2
+\ee
+
+The eq.  \ref{SEDpp} could represent the VHE photon contribution  to the spectrum. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Calculation of physical parameters and expected UHECRs}
+
+
+We have required a description of the SED up to MeV/GeV of  M87 \cite{fra12a} (blue line Figs. 1-2) to fit the VHE spectrum with a hadronic model, whether p$\gamma$ or pp emission (red line Figs 1-2 ).  For this fit, we have taken into account the parameters used from  synchrotron/SSC (Table 1); such as luminosity ($L^{obs}$), variability ($dt^{obs}$),  thermal particle target density ($n_p$) and lobes distance ($R$)\citep{abd10, der09,  har09, rom96}, bulk Lorentz factor ($\Gamma$), the viewing angle. After the fit;  either p$\gamma$ (see Table 2 ) or pp  (see table 3 ) interaction, we obtain   the values of  the spectral index $\alpha_p$,  energy normalization $E_0$ and proportionality constant $A_p$ (see section 1).  
+As  shown in \cite{you02,mat08a,mat08b, sal08, hin89}, there are many regions as proposals of number density.  So we have plotted App as a function of the Lobes distance for several number density of  thermal particle (Figs. 7 and 8).
+
+
+
+
+\noindent The fit of  the VHE photon spectrum with a hadronic model (either p$\gamma$ or pp interaction) determines the spectral index $\alpha_p$,  energy normalization $E_0$ and proportionality constant $A_p$ (see section 2). So, we calculate the number of  UHECRs expected on Earth. Results are given in Table 1. 
+
+
+\begin{center}\renewcommand{\arraystretch}{0.75}\addtolength{\tabcolsep}{-1pt}
+\begin{tabular}{ l c c c }
+ % \hline \hline
+ %\large{Name} & \large{Symbol} & \large{Value} \\
+ \hline
+ 
+
+
+\hline
+\hline
+\normalsize{Parameters} & \normalsize{M87}  \\
+\hline
+\hline
+
+\scriptsize{$dt^{obs}$ (s)} &  \scriptsize{$1.0 \times 10^{5}\,$}    \\
+ \scriptsize{$L^{obs}$ (erg s$^{-1}$) } & \scriptsize{$5 \times 10^{43}\,$}  \\ 
+\scriptsize{ $\theta$ (degrees)} & \scriptsize{$10\,$}    \\
+\scriptsize{$\Gamma$} &  \scriptsize{2.3}    \\
+\scriptsize{$\delta_{d}$} &  \scriptsize{3.9} \\
+\scriptsize{$d_z$ (pc)} &\scriptsize{$16$} \\
+
+
+
+
+
+%\scriptsize{Electron spectral index} & \scriptsize{$\alpha$} & \scriptsize{2.837 $\pm$ 0.004 } \\
+%\scriptsize{Magnetic field parameter}  & \scriptsize{$\epsilon_B$}  &  \scriptsize{0.1073 $\pm$ 0.0008 }\\
+%\scriptsize{Electron  energy parameter}  & \scriptsize{$\epsilon_e$}  &  \scriptsize{0.79 $\pm$ 0.14 }\\
+%\scriptsize{Ratio of expansion time}  & \scriptsize{$f_{es}$}  &  \scriptsize{0.0385 $\pm$ 0.0003}\\
+%\scriptsize{Proportionality electron constant} $(eV cm^2 s)^{-1}$  & \scriptsize{$ A_e $}  &  \scriptsize{ $(4.368\pm 0.003)\times 10^{15}$}\\
+%\scriptsize{Proportionality IC constant} $(eV cm^2 s)^{-1}$  & \scriptsize{$ A_{ic} $}  &  \scriptsize{ $(9.65\pm 0.07)\times 10^{16}$}\\
+%\scriptsize{Proportionality proton constant} $(TeV cm^2 s)^{-1}$  & \scriptsize{$ A_{pp} $}  &  \scriptsize{ $(5.9\pm 0.4)\times 10^{-7}$}\\
+%\scriptsize{Proportionality proton constant} $(TeV cm^2 s)^{-1}$  & \scriptsize{$ A_{p\gamma} $}  &  \scriptsize{ $(1.37\pm 0.99)\times 10^{4}$}\\
+%\scriptsize{Proton spectral index} & \scriptsize{$\alpha_p$} & \scriptsize{2.805 $\pm$ 0.008 } \\
+
+
+ 
+ %\scriptsize{Apparent  UHECR Luminosity (p$\gamma$)}  ($erg\,s^{-1}$)& \scriptsize{$L_p$} & \scriptsize{$2.7\times 10^{49}$ } \\
+ %\scriptsize{Apparent  UHECR Luminosity (pp)}  ($erg\,s^{-1}$)& \scriptsize{$L_p$} & \scriptsize{$2.9\times 10^{39}$ } \\
+
+
+ 
+\hline
+%\scriptsize{Predicted number of events: p$\gamma$ interaction} & \scriptsize{$N_{ev,p \gamma}$} & \scriptsize{$8.371\times 10^{10}$ } \\
+%\scriptsize{Predicted number of events: pp interaction} & \scriptsize{$N_{ev,p p}$} & \scriptsize{2.29} \\
+
+\hline
+
+ \end{tabular}
+\end{center}
+
+\begin{center}
+\scriptsize{\textbf{Table 1. Parameters used from Leptonic model to fit VHE photons.}}\\
+\scriptsize{}
+\end{center}
+
+
+
+
+\begin{center}\renewcommand{\arraystretch}{0.75}\addtolength{\tabcolsep}{-1pt}
+\begin{tabular}{ l c c c }
+ % \hline \hline
+ %\large{Name} & \large{Symbol} & \large{Value} \\
+
+
+\hline
+\hline
+\normalsize{Parameters} & \normalsize{M87} \\
+\hline
+\hline
+
+\scriptsize{$\alpha_p$}  & \scriptsize{2.49}   \\
+\scriptsize{E$^{obs}_{\pi^0-\gamma,c}$ (GeV)}  &\scriptsize{674.9}  \\
+\scriptsize{A$_{p\gamma}$  (MeV cm$^2$ s)$^{-1}$ }   & \scriptsize{5.37}  \\
+\scriptsize{E$_0$ (TeV)}   &\scriptsize{1}  \\
+
+\hline
+\hline
+
+ \end{tabular}
+\end{center}
+
+\begin{center}
+\scriptsize{\textbf{Table 2.  Fitting parameters obtained from  p$\gamma$ interaction}}\\
+\scriptsize{ }
+\end{center}
+
+\begin{center}\renewcommand{\arraystretch}{0.75}\addtolength{\tabcolsep}{-1pt}
+\begin{tabular}{ l c c c }
+ % \hline \hline
+ %\large{Name} & \large{Symbol} & \large{Value} \\
+
+
+\hline
+\hline
+\normalsize{Parameters} &  \normalsize{M87} &  \\
+\hline
+\hline
+
+%\ref{densM87} 
+%\ref{densNGC1275}
+\scriptsize{$\alpha_p$}  & \scriptsize{2.49}  \\
+\scriptsize{A$_{pp}$  (MeV cm$^2$ s)$^{-1}$ }     & \scriptsize{Fig. 8 }     \\
+\scriptsize{E$_0$ (TeV)}    &\scriptsize{1}    \\
+
+\hline
+\hline
+
+ \end{tabular}
+\end{center}
+
+\begin{center}
+\scriptsize{\textbf{Table 3. Fitting parameters obtained from  pp interaction}}\\
+\scriptsize{}
+\end{center}
+
+
+
+\section{Summary and conclusions}
+
+We have presented a hadronic model to describe the TeV photons in M87. Two hadronic interactions have been considered, p-$\gamma$ and pp interactions. In the first case, the target is considered as the second SED peak photons while in the second case, the target protons are considered those in the lobes.  For the target protons we have plotted App as a function of the Lobes distance for several thermal particle densities,   which represent a set of solutions for having a well description of TeV spectrum in the pp emission case.\\
+ We have taken into account the variability for M87, $\sim  10^{5}$ s, that corresponds to low state, for short  timescale variations presented in flaring state  this model  cannot be accommodated.
+
+ 
+\section{acknowledgments}
+We thank the anonymous referee for the comments given to improve the paper. We also thank to Charles Dermer, Markus B\"{o}tcher,  Parisa Roustazadeh,    Bin Zhang, Giulia DeBonis, Bachir Bouhadef, Mauro Morganti, Dario Grasso, Antonio Stamerra and Teresa Montaruli for useful discussions. 
+This work was supported by DGAPA-UNAM (Mexico) Project Numbers IN112910 and IN105211 and Conacyt project number 105033.
+%\end{acknowledgments}
+
+
+
+
+\begin{figure}[!htb] 
+\centering
+  %\begin{narrow}{2cm}{0cm}
+  % Requires \usepackage{graphicx}
+\includegraphics[width=0.5\textwidth]{spectrum.eps}\\
+  %\end{narrow}
+\caption{a}\label{SED}
+\end{figure} 
+
+
+
+
+\begin{figure}[!htb]  
+\centering
+  %\begin{narrow}{2cm}{0cm}
+  % Requires \usepackage{graphicx}
+\includegraphics[width=0.5\textwidth]{fit_m87_pp.eps}\\
+  %\end{narrow}
+  \caption{b}\label{SEDpp}
+\end{figure} 
+
+
+
+\begin{figure}[!htb]  
+\centering
+  %\begin{narrow}{2cm}{0cm}
+  % Requires \usepackage{graphicx}
+\includegraphics[width=0.5\textwidth]{fit_m87_pg.eps}\\
+  %\end{narrow}
+\caption{c}\label{SEDpg}
+\end{figure} 
+
+
+
+
+\begin{figure}[!htb] 
+% \epsscale{.80}
+%\plotone{p1.eps}
+\centering
+\includegraphics[width=0.5\textwidth]{p1.eps}\\
+\caption{pp as a function of the Lobes distance for several  thermal particle densities for  M87}
+\label{optdep}
+\end{figure}
+
+
+%\begin{figure}[!htb] 
+% \epsscale{.80}
+%\plotone{M87visibility.eps}
+%\centering
+%\includegraphics[width=0.5\textwidth]{M87visibility.eps}\\
+%\caption{e}\label{fod}
+%\end{figure}
+
+
+%\begin{figure}[!htb] 
+%\epsscale{.80}
+%\plotone{M87-nu-VERITAS1.eps}
+%\centering
+%\includegraphics[width=0.5\textwidth]{M87-nu-VERITAS.eps}\\
+ %\caption{d}\label{M87-nu-VERITAS}
+%\end{figure}
+
+
+
+%---- LA BIBLIOGRAPHIE (LISTE PUBLICATIONS EN FIN)----
+%\bibliographystyle{elsarticle-num} % (uses file "plain.bst")
+\bibliographystyle{plain} % (uses file "plain.bst")
+%\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{large}
+\bibliography{bib_m87}
+\end{large}
+\mbox{}
+
+
+
+
+
+\end{document}
+
