@@ -1,5 +1,23 @@
-import numpy as np
+#import numpy as np
+#import ROOT as rt
+#import matplotlib.pyplot as plt
+#import sys, os
+#from sys import *
+#from os import *
+
+from array import array
+import os
 import ROOT as rt
+import numpy as np
+import matplotlib.pyplot as plt
+from sys import *
+from pylab import *
+from math import *
+from makesplineplots import *
+
+
+
+
 
 
 rt.gROOT.Reset()
@@ -33,6 +51,8 @@ def makeFit(files):
         xder = []
         yarr = []
         yaba = []
+        mt = []
+        separados = []
         
         path = '/home/antonio/nissimExercises/NGC1275/c_NGC1275/'
         i = 0;
@@ -73,14 +93,51 @@ def makeFit(files):
 
         mg.GetXaxis().SetTitle('Energy (eV)')
         mg.GetYaxis().SetTitle('vFv (erg cm^{-2} s^{-1})')
+
         
     except:
         raise
         print 'Check the param of the code'
         
 
+def showMathPlotlib():
+    ''' Make the plot on matplotlib  '''
 
-files = ['chandra.dat', 'FERMI.dat', 'HST-optical-UV.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'swift_bat.dat', 'Swift_uvot.dat',
+    X,Y, X_izq, X_der, Y_arr, Y_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/FERMI.dat', unpack = True)
+    X1,Y1, X1_izq, X1_der, Y1_arr, Y1_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/magic.dat', unpack = True)
+    X2,Y2, X2_izq, X2_der, Y2_arr, Y2_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/MisuMe.dat', unpack = True)
+    X3,Y3, X3_izq, X3_der, Y3_arr, Y3_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/mojave.dat', unpack = True)
+    X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/ratan.dat', unpack = True)
+    X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/Swift_uvot.dat', unpack = True)
+    X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/unkown.dat', unpack = True)
+    
+    plt.figure('Experiments')
+
+    plt.errorbar(X,Y, X_izq, X_der, Y_arr, Y_aba, linestyle="none", marker="o", color="green", markersize=4.0, capsize=3.0, label = '1')
+    plt.errorbar(X1,Y1, X1_izq, X1_der, Y1_arr, Y1_aba, linestyle="none", marker="o", color="blue", markersize=4.0, capsize=3.0, label = '2')
+    plt.errorbar(X2,Y2, X2_izq, X2_der, Y2_arr, Y2_aba, linestyle="none", marker="o", color="red", markersize=4.0, capsize=3.0, label = '3')
+    plt.errorbar(X3,Y3, X3_izq, X3_der, Y3_arr, Y3_aba, linestyle="none", marker="o", color="yellow", markersize=4.0, capsize=3.0, label = '4')
+    plt.errorbar(X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba, linestyle="none", marker="o", color="black", markersize=4.0, capsize=3.0, label = '5')
+    plt.errorbar(X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba, linestyle="none", marker="o", color="orange", markersize=4.0, capsize=3.0, label = '6')
+    plt.errorbar(X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba, linestyle="none", marker="o", color="pink", markersize=4.0, capsize=3.0, label = '7')
+
+    a=plt.gca()
+    a.set_yscale('log')
+    a.set_xscale('log')
+
+    plt.show()
+
+
+
+
+
+
+
+
+
+
+files = ['FERMI.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
          'unkown.dat']
 
 makeFit(files)
+showMathPlotlib()
