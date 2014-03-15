@@ -94,6 +94,21 @@ def makeFit(files):
         mg.GetXaxis().SetTitle('Energy (eV)')
         mg.GetYaxis().SetTitle('vFv (erg cm^{-2} s^{-1})')
 
+        fun1 = rt.TF1('fun1','[0]*1e-12*(((x/([2]*1e-6))^(4/3)*(x>1.5e-6)*(x<([2]*1e-6)))+((x/([2]*1e-6))**((3-2.52)/2)*(x>=([2]*1e-6))*(x<[1]*1e-5)) + (([1]*10/([2]))**((3-2.52)/2)*(x/([1]*1e-5))**((2-2.52)/2))*(x>=[1]*1e-5)*(x<3e-4))', min(x1), max(x1))
+        
+        
+        rt.fun1.SetParameter(0,1)
+        rt.fun1.SetParLimits(0,1,1.2)
+        rt.fun1.SetParameter(1,5.7)
+        rt.fun1.SetParLimits(1,5.7,6.3)
+        rt.fun1.SetParameter(2,2.6)
+        rt.fun1.SetParLimits(2,2.6,2.63)
+        
+        rt.fun1.SetLineColor(2)
+        rt.fun1.SetLineWidth(2)
+        graph.Fit('fun1',"Q")
+        rt.fun1.Draw('L same')
+
         
     except:
         raise
@@ -140,5 +155,5 @@ def showMathPlotlib():
 files = ['FERMI.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
          'unkown.dat']
 
-#makeFit(files)
-showMathPlotlib()
+makeFit(files)
+#showMathPlotlib()
