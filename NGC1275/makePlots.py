@@ -1,9 +1,3 @@
-#import numpy as np
-#import ROOT as rt
-#import matplotlib.pyplot as plt
-#import sys, os
-#from sys import *
-#from os import *
 
 from array import array
 import os
@@ -36,6 +30,73 @@ saves = {}
 NP = 0
 NP1 = 0
 canvas = -1
+
+
+########################################################################################
+##############            Fisrt Module                  ################################
+########################################################################################
+
+def xx(aa,bb, cc):
+
+    '''Make a dat file with the fitted points '''
+
+    outspec = open("nsyn.dat","w")
+    ax=aa*1e
+    E_c=bb*1e
+    E_m=cc*1e
+    fl=ax
+    for ii in arange(-6.3, -1.0, .9):
+        Ega0=pow(10,ii)
+        Egamma=Ega0
+        C1=0
+        C2=0
+        C3=0
+        if(Egamma < E_m):
+            C1=fl*pow(Egamma/E_m,4.0/3.0)
+        if(E_m <= Egamma and  Egamma < E_c ):
+            C2=fl*pow(Egamma/E_m,-(2.52-3.0)/2.0)
+        if(Egamma >=E_c):
+            C3=fl*pow(E_c/E_m,-(2.52-3.0)/2)*pow(Egamma/E_c,-(2.52-2.0)/2.0)
+        C=C1+C2+C3
+
+        outspec.write("%E %E\n" %(Ega0,C))
+
+    outspec.close()
+
+def yy(aa,bb,cc,dd):
+
+    '''Make a dat file with the fitted points '''
+
+
+
+
+##########################################################################################
+####################### Second Module of the program #####################################
+##########################################################################################
+
+def make_plot():                                                                               
+    ''' Make the spline of the plot '''
+    x1 = []                                                                                                                                           
+    y1 = []                                                                                                                                           
+    file_path = "/home/antonio/nissimExercises/nfit/nsyn.dat"                                                                                         
+    rfile = open(file_path, "r")                                                                                                                      
+    if rfile:                                                                                                                                         
+        for line in rfile:                                                                                                                            
+            a, b = [float(t) for t in line.split()]                                                                                                   
+            x1.append(a)                                                                                                                              
+            y1.append(b)                                                                                                                              
+                                                                                                                                                      
+    X = np.array(x1, float)                                                                                                                           
+    Y = np.array(y1, float)                                                                                                                           
+    x_new = np.linspace(10e-7, 10e-2,num = 10e4)                                                                                                      
+    #rbfplot(X,Y,x_new,function='multiquadric',epsilon = 10e-5, view = True)                                                                          
+    rbfplot(X,Y,x_new,function= 'inverse_multiquadric',epsilon = 10e-4,smooth = 1, view = True)
+
+
+##########################################################################################
+######################## Third Module of the program #####################################
+##########################################################################################
+
 
 def makeFit(files):
 
@@ -94,17 +155,33 @@ def makeFit(files):
         mg.GetXaxis().SetTitle('Energy (eV)')
         mg.GetYaxis().SetTitle('vFv (erg cm^{-2} s^{-1})')
 
-        fun4 = rt.TF1("fun4"," [0]*((x/[1])^(4/3)*(x>1e-6)*(x<[1])+((x/[1])**((3-2.8267)/2)*(x>=[1])*(x<[2])) + (([2]/[1])**((3-2.8267)/2))*((x/[2])**((2-2.8267)/2))*(x>=[2]))",1e+4,1e+12)
-        rt.fun4.SetParameter(0,6.32041e-07)
-        rt.fun4.SetParameter(1,1e+6)
-        rt.fun4.SetParLimits(1,1e+5,1e+7)
-        rt.fun4.SetParameter(2,5e+7)
-        rt.fun4.SetParLimits(2,1e+7,1e+9)
+        fun4 = rt.TF1("fun4"," [0]*((x/[2])^(4/3)*(x>1e-6)*(x<[2])+((x/[2])**((3-[1])/2)*(x>=[2])*(x<[3])) + ((x/[2])**((3-[1])/2))*((x/[3])**((2-[1])/2))*(x>=[3])*(x<30))",  1e-6,30)
+        rt.fun4.SetParameter(1,2.5);
+        rt.fun4.SetParLimits(1,2,3);
+        rt.fun4.SetParameter(2,1e-4);
+        rt.fun4.SetParLimits(2,1e-5,1e-3);
+        rt.fun4.SetParameter(3,1);
+        rt.fun4.SetParLimits(3,1e-1,5);
+        rt.fun4.SetParameter(4,100);
         
-        rt.fun4.SetLineColor(2)
-        rt.fun4.SetLineWidth(2)
-        graph.Fit('fun4',"Q")
-        rt.fun1.Draw('L same')
+        graph.Fit('fun4',"Q")                                                                                                                                                                  
+        rt.fun4.Draw('L same') 
+
+        alfa = rt.fun4.GetParameter(1)
+
+        fun2 = rt.TF1("fun2"," [0]*((x/[1])^(4/3)*(x>1e-6)*(x<[1])+((x/[1])**((3-[3])/2)*(x>=[1])*(x<[2])) + (([2]/[1])**((3-[3])/2))*((x/[2])**((2-[3])/2))*(x>=[2]))",1e+4,1e+12)
+        rt.fun2.SetParameter(0,6.32041e-07)
+        rt.fun2.SetParameter(1,1e+6)
+        rt.fun2.SetParLimits(1,1e+5,1e+7)
+        rt.fun2.SetParameter(2,5e+7)
+        rt.fun2.SetParLimits(2,1e+7,1e+9)
+        rt.fun2.SetParameter(3, alfa)
+        rt.fun2.SetParLimits(3,alfa, alfa)
+        
+        rt.fun2.SetLineColor(2)
+        rt.fun2.SetLineWidth(2)
+        graph.Fit('fun2',"Q")
+        rt.fun2.Draw('L same')
 
         
     except:
@@ -153,4 +230,4 @@ files = ['FERMI.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swi
          'unkown.dat']
 
 makeFit(files)
-showMathPlotlib()
+#showMathPlotlib()
