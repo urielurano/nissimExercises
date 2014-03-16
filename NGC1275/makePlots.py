@@ -99,7 +99,10 @@ def make_SplinePlot():
     XS, YS = loadtxt('/home/antonio/nissimExercises/NGC1275/syn.dat', unpack = True)
     XC, YC = loadtxt('/home/antonio/nissimExercises/NGC1275/comp.dat', unpack = True)
 
-    
+    for x in np.arange(-6,-1,0.2):
+        x_new = np.linspace(10e-6,10e-2,pow(10,x))
+        UnivariateSplinePlot(XS, YS, x_new, k = 2, view = True)
+
 
 ##########################################################################################
 ######################## Third Module of the program #####################################
