@@ -9,11 +9,6 @@ from pylab import *
 from math import *
 from makesplineplots import *
 
-
-
-
-
-
 rt.gROOT.Reset()
 
 rt.gStyle.SetFillColor(0)
@@ -41,9 +36,9 @@ def xx(aa,bb, cc):
     '''Make a dat file with the fitted points '''
 
     outspec = open("nsyn.dat","w")
-    ax=aa*1e
-    E_c=bb*1e
-    E_m=cc*1e
+    ax=aa
+    E_c=bb
+    E_m=cc
     fl=ax
     for ii in arange(-6.3, -1.0, .9):
         Ega0=pow(10,ii)
@@ -66,8 +61,12 @@ def xx(aa,bb, cc):
 def yy(aa,bb,cc,dd):
 
     '''Make a dat file with the fitted points '''
-
-
+    
+    outspec = open("nsyn.dat","w")
+    
+    for ii in arange(-7.0,2.0, .9):
+        Ega0=pow(10,ii)
+    
 
 
 ##########################################################################################
@@ -155,7 +154,7 @@ def makeFit(files):
         mg.GetXaxis().SetTitle('Energy (eV)')
         mg.GetYaxis().SetTitle('vFv (erg cm^{-2} s^{-1})')
 
-        fun4 = rt.TF1("fun4"," [0]*((x/[2])^(4/3)*(x>1e-6)*(x<[2])+((x/[2])**((3-[1])/2)*(x>=[2])*(x<[3])) + ((x/[2])**((3-[1])/2))*((x/[3])**((2-[1])/2))*(x>=[3])*(x<30))",  1e-6,30)
+        fun4 = rt.TF1("fun4"," [0]*((x/[2])^(4/3)*(x>1e-6)*(x<[2])+((x/[2])**((3-[1])/2)*(x>=[2])*(x<[3])) + (([3]/[2])**((3-[1])/2))*((x/[3])**((2-[1])/2))*(x>=[3])*(x<30))",  1e-6,30)
         rt.fun4.SetParameter(1,2.5);
         rt.fun4.SetParLimits(1,2,3);
         rt.fun4.SetParameter(2,1e-4);
@@ -168,6 +167,9 @@ def makeFit(files):
         rt.fun4.Draw('L same') 
 
         alfa = rt.fun4.GetParameter(1)
+        a_s = rt.fun4.GetParameter(0)
+        ec_s = rt.fun4.GetParameter(2)
+        em_s = rt.fun4.GetParameter(3)
 
         fun2 = rt.TF1("fun2"," [0]*((x/[1])^(4/3)*(x>1e-6)*(x<[1])+((x/[1])**((3-[3])/2)*(x>=[1])*(x<[2])) + (([2]/[1])**((3-[3])/2))*((x/[2])**((2-[3])/2))*(x>=[2]))",1e+4,1e+12)
         rt.fun2.SetParameter(0,6.32041e-07)
@@ -182,6 +184,11 @@ def makeFit(files):
         rt.fun2.SetLineWidth(2)
         graph.Fit('fun2',"Q")
         rt.fun2.Draw('L same')
+
+        a_c = rt.fun4.GetParameter(0)
+        ec_c = rt.fun4.GetParameter(1)
+        em_c = rt.fun4.GetParameter(2)
+
 
         
     except:
@@ -227,7 +234,7 @@ def showMathPlotlib():
 
 
 files = ['FERMI.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
-         'unkown.dat']
+         'unkown.dat', 'butterfly.dat']
 
 makeFit(files)
-#showMathPlotlib()
+showMathPlotlib()
