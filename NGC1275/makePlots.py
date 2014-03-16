@@ -92,24 +92,14 @@ def comp(Ac,alpha,Em_c,Ec_c):
 ####################### Second Module of the program #####################################
 ##########################################################################################
 
-def make_plot():                                                                               
-    ''' Make the spline of the plot '''
-    x1 = []                                                                                                                                           
-    y1 = []                                                                                                                                           
-    file_path = "/home/antonio/nissimExercises/nfit/nsyn.dat"                                                                                         
-    rfile = open(file_path, "r")                                                                                                                      
-    if rfile:                                                                                                                                         
-        for line in rfile:                                                                                                                            
-            a, b = [float(t) for t in line.split()]                                                                                                   
-            x1.append(a)                                                                                                                              
-            y1.append(b)                                                                                                                              
-                                                                                                                                                      
-    X = np.array(x1, float)                                                                                                                           
-    Y = np.array(y1, float)                                                                                                                           
-    x_new = np.linspace(10e-7, 10e-2,num = 10e4)                                                                                                      
-    #rbfplot(X,Y,x_new,function='multiquadric',epsilon = 10e-5, view = True)                                                                          
-    rbfplot(X,Y,x_new,function= 'inverse_multiquadric',epsilon = 10e-4,smooth = 1, view = True)
+def make_SplinePlot():
 
+    ''' Make the spline of the plot '''
+
+    XS, YS = loadtxt('/home/antonio/nissimExercises/NGC1275/syn.dat', unpack = True)
+    XC, YC = loadtxt('/home/antonio/nissimExercises/NGC1275/comp.dat', unpack = True)
+
+    
 
 ##########################################################################################
 ######################## Third Module of the program #####################################
@@ -263,5 +253,6 @@ def showMathPlotlib():
 files = ['FERMI.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
          'unkown.dat', 'butterfly.dat']
 
-makeFit(files)
-showMathPlotlib()
+#makeFit(files)
+#showMathPlotlib()
+make_SplinePlot()
