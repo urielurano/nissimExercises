@@ -34,8 +34,8 @@ canvas = -1
 
 
 def xx(aa,bb, cc):
-
     outspec = open("nsyn.dat","w")
+
     ax=aa*1e-12
     E_c=bb*1e-5
     E_m=cc*1e-6
@@ -65,18 +65,8 @@ def xx(aa,bb, cc):
 
 
 def make_plot():
-    x1 = []
-    y1 = []
-    file_path = "/home/antonio/nissimExercises/nfit/nsyn.dat"
-    rfile = open(file_path, "r")
-    if rfile:
-        for line in rfile:
-            a, b = [float(t) for t in line.split()]
-            x1.append(a)
-            y1.append(b)
-            
-    X = np.array(x1, float)
-    Y = np.array(y1, float)
+   
+    X,Y = loadtxt('/home/antonio/nissimExercises/nfit/nsyn.dat', unpack=True)
     x_new = np.linspace(10e-7, 10e-2,num = 10e4)
     #rbfplot(X,Y,x_new,function='multiquadric',epsilon = 10e-5, view = True)
     rbfplot(X,Y,x_new,function= 'inverse_multiquadric',epsilon = 10e-4,smooth = 1, view = True)

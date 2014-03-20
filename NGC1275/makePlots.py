@@ -221,7 +221,7 @@ def showMathPlotlib():
     X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/ratan.dat', unpack = True)
     X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/Swift_uvot.dat', unpack = True)
     X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/unkown.dat', unpack = True)
-    X7,Y7, X7_izq, X7_der, Y7_arr, Y7_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/butterfly.dat', unpack = True)
+    X7,Y7, X7_izq, X7_der, Y7_arr, Y7_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/butterfly-final.dat', unpack = True)
     
     XS, YS = loadtxt('/home/antonio/nissimExercises/NGC1275/syn.dat', unpack = True)
     XC, YC = loadtxt('/home/antonio/nissimExercises/NGC1275/comp.dat', unpack = True)
@@ -254,8 +254,8 @@ def showMathPlotlib():
 
 
 files = ['FERMI.dat', 'magic.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
-         'unkown.dat', 'butterfly.dat']
+         'unkown.dat', 'butterfly-final.dat']
 
-#makeFit(files)
-#showMathPlotlib()
-make_SplinePlot()
+makeFit(files)
+showMathPlotlib()
+#make_SplinePlot()
