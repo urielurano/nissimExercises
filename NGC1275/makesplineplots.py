@@ -47,6 +47,7 @@ def interp1dPlot(X, Y, x_new, **args):
     if('view' in set2):
         if(type(args['view']) == bool and args['view'] == True):
             plt.show()
+    plt.close()
     
 
 def UnivariateSplinePlot(X, Y, x_new, **args):
@@ -96,7 +97,7 @@ def UnivariateSplinePlot(X, Y, x_new, **args):
     if('view' in set2):
         if(type(args['view']) == bool and args['view'] == True):
             plt.show()
-    
+    plt.close()
 
 
 def rbfplot(X, Y, x_new, **args):
@@ -170,6 +171,8 @@ def rbfplot(X, Y, x_new, **args):
     if('view' in set2):
         if(type(args['view']) == bool and args['view'] == True):
             plt.show()
+
+    plt.close()
     
 
 def PchipInterpolatorPlot(X,Y,x_new, **args):
@@ -211,6 +214,7 @@ def PchipInterpolatorPlot(X,Y,x_new, **args):
     if('view' in set2):
         if(type(args['view']) == bool and args['view'] == True):
             plt.show()
+    plt.close()
 
 
 
@@ -239,5 +243,5 @@ def pchipPlot(X, Y, x_new, **args):
     if(args.has_key('view')):
         if(type(args['view']) == bool and args['view'] == True):
             plt.show()
-
+    plt.close()
 
