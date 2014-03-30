@@ -1,4 +1,3 @@
-
 from array import array
 import os
 import ROOT as rt
@@ -7,7 +6,6 @@ import matplotlib.pyplot as plt
 from sys import *
 from pylab import *
 from math import *
-from makesplineplots import *
 from matplotlib.path import Path
 import matplotlib.patches as patches
 
@@ -114,18 +112,17 @@ def make_SplinePlot():
 
     try:
 
-            X,Y, X_izq, X_der, Y_arr, Y_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/FERMI.dat', unpack = True)
-            X1,Y1, X1_izq, X1_der, Y1_arr, Y1_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/magic.dat', unpack = True)
-            X2,Y2, X2_izq, X2_der, Y2_arr, Y2_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/MisuMe.dat', unpack = True)
-            X3,Y3, X3_izq, X3_der, Y3_arr, Y3_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/mojave.dat', unpack = True)
-            X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/ratan.dat', unpack = True)
-            X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/Swift_uvot.dat', unpack = True)
-            X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/unkown.dat', unpack = True)
-            #X7,Y7, X7_izq, X7_der, Y7_arr, Y7_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/butterfly-final.dat', unpack = True)
+            X,Y, X_izq, X_der, Y_arr, Y_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/FERMI.dat', unpack = True)
+            X1,Y1, X1_izq, X1_der, Y1_arr, Y1_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/magic.dat', unpack = True)
+            X2,Y2, X2_izq, X2_der, Y2_arr, Y2_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/MisuMe.dat', unpack = True)
+            X3,Y3, X3_izq, X3_der, Y3_arr, Y3_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/mojave.dat', unpack = True)
+            X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/ratan.dat', unpack = True)
+            X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/Swift_uvot.dat', unpack = True)
+            X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/unkown.dat', unpack = True)
 
             
-            XS, YS = loadtxt('/home/antonio/proof/syn.dat', unpack = True)
-            XC, YC = loadtxt('/home/antonio/proof/comp.dat', unpack = True)
+            XS, YS = loadtxt('/home/antonio/nissimExercises/NGC1275/syn.dat', unpack = True)
+            XC, YC = loadtxt('/home/antonio/nissimExercises/NGC1275/comp.dat', unpack = True)
             
             verts = []
             codes = [Path.MOVETO]
@@ -145,10 +142,6 @@ def make_SplinePlot():
 
             pathC = Path(vertsC, codesC)
 
-            print vertsC
-
-            
-                
             fig = plt.figure()
             ax = fig.add_subplot(111)
             patchS = patches.PathPatch(path, facecolor='none', lw=2)
@@ -156,16 +149,13 @@ def make_SplinePlot():
             ax.add_patch(patchS)
             ax.add_patch(patchC)
                         
-            plt.errorbar(X,Y, Y_arr, Y_aba, linestyle="none", marker="o", color="green", markersize=4.0, capsize=3.0, label = '1')
+            #ax.errorbar(X,Y, Y_arr, Y_aba, linestyle="none", marker="o", color="green", markersize=4.0, capsize=3.0, label = '1')
             plt.errorbar(X1,Y1, Y1_arr, Y1_aba, linestyle="none", marker="o", color="blue", markersize=4.0, capsize=3.0, label = '2')
             plt.errorbar(X2,Y2, Y2_arr, Y2_aba, linestyle="none", marker="o", color="red", markersize=4.0, capsize=3.0, label = '3')
             plt.errorbar(X3,Y3, Y3_arr, Y3_aba, linestyle="none", marker="o", color="yellow", markersize=4.0, capsize=3.0, label = '4')
             plt.errorbar(X4,Y4, Y4_arr, Y4_aba, linestyle="none", marker="o", color="black", markersize=4.0, capsize=3.0, label = '5')
             plt.errorbar(X5,Y5, Y5_arr, Y5_aba, linestyle="none", marker="o", color="orange", markersize=4.0, capsize=3.0, label = '6')
             plt.errorbar(X6,Y6, Y6_arr, Y6_aba, linestyle="none", marker="o", color="pink", markersize=4.0, capsize=3.0, label = '7')
-            #plt.errorbar(X7,Y7, Y7_arr, Y7_aba, linestyle="none", marker="o", color="magenta", markersize=4.0, capsize=3.0, label = '8')
-            #plt.plot(XS,YS)
-            #plt.plot(XC,YC)
             
             
             a=plt.gca()
@@ -203,7 +193,7 @@ def makeFit(files):
         mt = []
         separados = []
         
-        path = '/home/antonio/nissimExercises/NGC1275/c_NGC1275/'
+        path = '/home/antonio/nissimExercises/NGC1275/'
         i = 0;
         while(i < len(files)):
             pathFile = path + files[i]
@@ -288,17 +278,17 @@ def makeFit(files):
         print 'Check the param of the code'
         
 
-def showMathPlotlib():
+def _showMathPlotlib():
     ''' Make the plot on matplotlib  '''
 
-    X,Y, X_izq, X_der, Y_arr, Y_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/FERMI.dat', unpack = True)
-    X1,Y1, X1_izq, X1_der, Y1_arr, Y1_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/magic.dat', unpack = True)
-    X2,Y2, X2_izq, X2_der, Y2_arr, Y2_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/MisuMe.dat', unpack = True)
-    X3,Y3, X3_izq, X3_der, Y3_arr, Y3_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/mojave.dat', unpack = True)
-    X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/ratan.dat', unpack = True)
-    X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/Swift_uvot.dat', unpack = True)
-    X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/unkown.dat', unpack = True)
-    X7,Y7, X7_izq, X7_der, Y7_arr, Y7_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/c_NGC1275/butterfly-final.dat', unpack = True)
+    X,Y, X_izq, X_der, Y_arr, Y_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/FERMI.dat', unpack = True)
+    X1,Y1, X1_izq, X1_der, Y1_arr, Y1_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/magic.dat', unpack = True)
+    X2,Y2, X2_izq, X2_der, Y2_arr, Y2_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/MisuMe.dat', unpack = True)
+    X3,Y3, X3_izq, X3_der, Y3_arr, Y3_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/mojave.dat', unpack = True)
+    X4,Y4, X4_izq, X4_der, Y4_arr, Y4_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/ratan.dat', unpack = True)
+    X5,Y5, X5_izq, X5_der, Y5_arr, Y5_aba = loadtxt('/home/antonio/nissimExercises/NGC1275/Swift_uvot.dat', unpack = True)
+    X6,Y6, X6_izq, X6_der, Y6_arr, Y6_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/unkown.dat', unpack = True)
+    X7,Y7, X7_izq, X7_der, Y7_arr, Y7_aba= loadtxt('/home/antonio/nissimExercises/NGC1275/butterfly-final.dat', unpack = True)
     
     XS, YS = loadtxt('/home/antonio/nissimExercises/NGC1275/syn.dat', unpack = True)
     XC, YC = loadtxt('/home/antonio/nissimExercises/NGC1275/comp.dat', unpack = True)
@@ -334,5 +324,5 @@ files = ['FERMI.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
          'unkown.dat', 'butterfly-final.dat']
 
 makeFit(files)
-#showMathPlotlib()
+#_showMathPlotlib()
 make_SplinePlot()
