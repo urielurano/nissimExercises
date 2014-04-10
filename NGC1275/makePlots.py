@@ -310,7 +310,8 @@ def _showMathPlotlib():
     a=plt.gca()
     a.set_yscale('log')
     a.set_xscale('log')
-
+    plt.xlim(1e-6,1e13)
+    plt.ylim(1e-9,1e-3)
     plt.show()
 
 
@@ -324,5 +325,5 @@ files = ['FERMI.dat', 'MisuMe.dat', 'mojave.dat', 'ratan.dat', 'Swift_uvot.dat',
          'unkown.dat', 'butterfly-final.dat','magic.dat']
 
 makeFit(files)
-#_showMathPlotlib()
+_showMathPlotlib()
 make_SplinePlot()

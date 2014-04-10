@@ -329,4 +329,4 @@ files = ['ebl.dat','kvaminmax.dat','lat.dat','MAGIC.dat',
 
 makeFit(files)
 #_showMathPlotlib()
-make_SplinePlot()
+#make_SplinePlot()

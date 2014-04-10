@@ -26,6 +26,4 @@ set format x "10^{%L}"
 #set logscale x 
 
 set output "Vefs_muzero.eps"
-plot "points.dat" u 1:2
-
-
+plot "puntos.dat" u 1:2
