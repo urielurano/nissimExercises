@@ -1,37 +1,10 @@
-from Tkinter import *
-
-def window():
-
-    root = Tk()  
-    
-    frame = Frame(root)  
-    frame.pack()  
-    
-    label = Label(frame, text="Hola, por favor selecciona los archivos de los experimentos")  
-    c1 = Checkbutton(frame, text="Synchrotron")  
-    c2 = Checkbutton(frame, text="Inverse Compton")  
-    entry = Entry(frame)  
-    button = Button(frame, text="Aceptar")  
-    
-    label.pack()  
-    c1.pack()  
-    c2.pack()
-    entry.pack()  
-    button.pack()  
-  
-    root.mainloop()  
-
 
 def makeArray(filesArray):
 
-    '''This script take all the files .dat and make only one of all points'''
-
     x1,y1,xizq,xder,yarr,yaba=[],[],[],[],[],[]
 
-    #walk along the array of file paths
     for x in range(0,len(filesArray)):
         try:
-            #We now try to 
             pathFile = filesArray[x]
             rfile = open(pathFile, 'r')
             if rfile:
@@ -59,8 +32,7 @@ def makeArray(filesArray):
         except:
             print "Revisa la ruta de tus archivos"
 
-listaDeArchivos = ['archivo1.dat','archivo2.dat','archivoN.dat' ]
+listaDeArchivos = ['atom.dat','fermi.dat','hess.dat' ]
 
+makeArray(listaDeArchivos)
 
-
-window()
