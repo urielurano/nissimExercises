@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.3.19)  6 MAY 2014 09:26
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.3.19)  7 MAY 2014 08:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,7 +933,7 @@ Missing character: There is no ¿ in font cmss12!
 
 [4
 
-] <neutronStar.jpg, id=183, 192.72pt x 134.4222pt>
+] <neutronStar.jpg, id=171, 192.72pt x 134.4222pt>
 File: neutronStar.jpg Graphic file (type jpg)
  <use neutronStar.jpg>
 Package pdftex.def Info: neutronStar.jpg used on input line 96.
@@ -945,7 +945,7 @@ Overfull \hbox (2.27585pt too wide) in paragraph at lines 96--96
 
 [5
 
- <./neutronStar.jpg>] <expulsiondeljet.jpg, id=218, 642.4pt x 529.98pt>
+ <./neutronStar.jpg>] <expulsiondeljet.jpg, id=203, 642.4pt x 529.98pt>
 File: expulsiondeljet.jpg Graphic file (type jpg)
 
 <use expulsiondeljet.jpg>
@@ -957,12 +957,12 @@ Overfull \hbox (18.33583pt too wide) in paragraph at lines 125--125
  []
 
 
-Overfull \vbox (8.28319pt too high) detected at line 125
+Overfull \vbox (12.78664pt too high) detected at line 125
  []
 
 [6
 
- <./expulsiondeljet.jpg>] <figure1.jpg, id=254, 803.0pt x 463.7325pt>
+ <./expulsiondeljet.jpg>] <figure1.jpg, id=234, 803.0pt x 463.7325pt>
 File: figure1.jpg Graphic file (type jpg)
 
 <use figure1.jpg>
@@ -977,15 +977,52 @@ Overfull \hbox (18.33337pt too wide) in paragraph at lines 153--153
 
  <./figure1.jpg>] [8
 
-] <creacionGRB.png, id=323, 698.61pt x 405.515pt>
+]
+Missing character: There is no Ã in font cmss10!
+Missing character: There is no ³ in font cmss10!
+ <creacionGRB.png, id=297, 698.61pt x 405.515pt>
 File: creacionGRB.png Graphic file (type png)
 
 <use creacionGRB.png>
-Package pdftex.def Info: creacionGRB.png used on input line 198.
+Package pdftex.def Info: creacionGRB.png used on input line 203.
 (pdftex.def)             Requested size: 139.71951pt x 81.10155pt.
- [9
 
- <./creacionGRB.png>]
+Overfull \vbox (35.83783pt too high) detected at line 203
+ []
+
+[9
+
+ <./creacionGRB.png>] <choques.jpg, id=330, 472.76625pt x 351.3125pt>
+File: choques.jpg Graphic file (type jpg)
+
+<use choques.jpg>
+Package pdftex.def Info: choques.jpg used on input line 235.
+(pdftex.def)             Requested size: 118.19127pt x 87.8279pt.
+ [10
+
+ <./choques.jpg>]
+<grb-spectrum1.jpg, id=362, 853.1875pt x 702.625pt>
+File: grb-spectrum1.jpg Graphic file (type jpg)
+ <use grb-spectrum1.jpg>
+Package pdftex.def Info: grb-spectrum1.jpg used on input line 265.
+(pdftex.def)             Requested size: 127.9726pt x 105.38919pt.
+
+[11
+
+ <./grb-spectrum1.jpg>]
+Missing character: There is no Ã in font cmss10!
+Missing character: There is no ­ in font cmss10!
+ <img69.jpg, id=393, 554.07pt x 409.53pt>
+File: img69.jpg Graphic file (type jpg)
+
+<use img69.jpg>
+Package pdftex.def Info: img69.jpg used on input line 293.
+(pdftex.def)             Requested size: 138.51715pt x 102.38225pt.
+ [12
+
+ <./img69.jpg>] [13
+
+]
 \tf@nav=\write6
 \openout6 = `presentacion.nav'.
 
@@ -995,42 +1032,43 @@ Package pdftex.def Info: creacionGRB.png used on input line 198.
 \tf@snm=\write8
 \openout8 = `presentacion.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 326.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 326.
  (./presentacion.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 326.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 326.
 Package rerunfilecheck Info: File `presentacion.out' has not changed.
-(rerunfilecheck)             Checksum: B19EBA87B5184CB944EA488484116872;197.
+(rerunfilecheck)             Checksum: 88B5389BB3D4BD8582B91DA1D9F96AD6;207.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 326.
  ) 
 Here is how much of TeX's memory you used:
- 16085 strings out of 494999
- 301995 string characters out of 6180801
- 375714 words of memory out of 5000000
- 18871 multiletter control sequences out of 15000+600000
+ 16094 strings out of 494999
+ 301544 string characters out of 6180801
+ 373711 words of memory out of 5000000
+ 18868 multiletter control sequences out of 15000+600000
  11630 words of font info for 43 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 56i,19n,60p,421b,747s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,55p,421b,652s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msam10.pfb>
-Output written on presentacion.pdf (9 pages, 699533 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msam10.pfb>
+Output written on presentacion.pdf (13 pages, 908603 bytes).
 PDF statistics:
- 400 PDF objects out of 1000 (max. 8388607)
- 356 compressed objects within 4 object streams
- 22 named destinations out of 1000 (max. 500000)
- 87 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 450 compressed objects within 5 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

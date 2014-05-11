@@ -1,4 +1,5 @@
 \beamer@endinputifotherversion {3.32pt}
-\beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Y la fotosfera ?`qu\'e rol tiene?}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{?`Entonces?}{9}{0}{1}
+\beamer@sectionintoc {1}{En general}{3}{0}{1}
+\beamer@sectionintoc {2}{Y la fotosfera ?`qu\'e rol tiene?}{4}{0}{2}
+\beamer@sectionintoc {3}{?`Entonces?}{9}{0}{3}
+\beamer@sectionintoc {4}{Al final}{13}{0}{4}
