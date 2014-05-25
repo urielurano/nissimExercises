@@ -1,0 +1,4 @@
+#Catalogue of objects Seyfert of the list of icecube
+#
+#name of source	RA	Dec
+ESO139-G12	264.41	-59.94

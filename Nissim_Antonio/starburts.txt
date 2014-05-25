@@ -1,0 +1,4 @@
+#Catalogue of objects starburts of the list of icecube
+#
+#name of source	RA	Dec
+M82	148.97	69.68

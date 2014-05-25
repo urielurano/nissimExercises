@@ -1,0 +1,8 @@
+#Catalogue of objects Not Identified of the list of icecube
+#
+#name of source	RA	Dec
+MGROJ1908+06	286.99	6.27
+HESSJ1834-087	278.69	-8.76
+HESSJ1741-302	265.25	-30.2
+HESSJ1503-582	226.46	-58.74
+HESSJ1507-622	226.72	-62.34

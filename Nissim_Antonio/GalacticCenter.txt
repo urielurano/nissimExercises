@@ -1,0 +1,4 @@
+#Catalogue of objects Galactic Center of the list of icecube
+#
+#name of source	RA	Dec
+SgrA*	266.42	-29.01

@@ -1,0 +1,12 @@
+#Catalogue of objects SNR of the list of icecube
+#
+#name of source	RA	Dec
+TYCHO	6.36	64.18
+CasA	350.85	58.82
+IC443	94.18	22.53
+W51C	290.75	14.19
+W44	284.04	1.38
+W28	270.43	-23.34
+RXJ1713.7-3946	258.25	-39.75
+RXJ0852.0-4622	133.0	-46.37
+RCW86		220.68	-62.48

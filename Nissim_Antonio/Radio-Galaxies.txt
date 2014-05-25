@@ -1,0 +1,8 @@
+#Catalogue of objects Radio Galaxies of the list of icecube
+#
+#name of source	RA	Dec
+NGC1275	49.95	41.51
+CygA	299.87	40.73
+3C123.0	69.27	29.67
+M87 	187.71	12.39
+CenA	201.37	-43.02
